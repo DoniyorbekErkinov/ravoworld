@@ -1,24 +1,15 @@
 <script>
 import handGlobe from './components/handGlobe.vue';
+import logo from './components/logo.vue';
 </script>
 
 <template>
-  <div class="bg-mBlack flex flex-col ">
+  <div class="h-full flex flex-col scrollbarActive overflow-y-hidden">
     <div class="2xl:w-[1920px] xl:w-[1800px] lg:w-[1300px] mx-auto">
       <!-- Navbar Start -->
       <div class="w-full py-8 flex justify-between items-center">
         <div class="w-[30%] text-[36px] flex items-center">
-          <svg width="208" height="24" viewBox="0 0 208 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M19.5703 23.615L10.7974 14.7594H4.04902V23.615H0V1.15508H15.1356C17.6422 1.15508 19.6667 1.75401 21.2091 2.95187C22.7516 4.12834 23.5229 5.82888 23.5229 8.05348C23.5229 10.2567 22.8052 11.9144 21.3698 13.0267C19.9345 14.1176 17.9742 14.6845 15.4891 14.7273L24.744 23.615H19.5703ZM4.04902 4.39572V11.6471H14.9428C16.3353 11.6471 17.4386 11.3369 18.2527 10.7166C19.0668 10.0963 19.4739 9.20856 19.4739 8.05348C19.4739 6.8984 19.0561 6 18.2206 5.35829C17.4065 4.71658 16.3139 4.39572 14.9428 4.39572H4.04902Z" fill="#D11011"/>
-            <path d="M36.6177 6.41711C39.724 6.4385 42.0806 7.04813 43.6874 8.24599C45.3155 9.44385 46.1296 11.2086 46.1296 13.5401V23.615H42.5948V19.893C40.9023 22.631 37.8709 24 33.5006 24C30.9512 24 29.0445 23.5508 27.7805 22.6524C26.5165 21.754 25.8845 20.5668 25.8845 19.0909C25.8845 17.4866 26.6451 16.2781 28.1661 15.4652C29.7086 14.6524 32.0438 14.1497 35.1716 13.9572L42.2734 13.4759V12.7701C42.2734 11.6791 41.8021 10.7914 40.8595 10.107C39.9169 9.42246 38.5029 9.08021 36.6177 9.08021C33.2328 9.08021 31.2725 10 30.7369 11.8396H27.1057C27.3413 9.95722 28.3268 8.57754 30.0621 7.70053C31.7974 6.82353 33.9826 6.39572 36.6177 6.41711ZM34.4967 21.3369C36.8962 21.3369 38.7921 20.877 40.1847 19.9572C41.5772 19.0374 42.2734 17.893 42.2734 16.5241V15.754L35.6215 16.1711C31.6796 16.4278 29.7086 17.3369 29.7086 18.8984C29.7086 19.6257 30.1049 20.2139 30.8976 20.6631C31.6903 21.1123 32.89 21.3369 34.4967 21.3369Z" fill="#D11011"/>
-            <path d="M66.6238 6.80214H70.8013L62.2213 23.615H56.6298L48.1461 6.80214H52.3879L59.4898 21.5936L66.6238 6.80214Z" fill="#D11011"/>
-            <path d="M74.9724 21.6898C72.9586 20.1283 71.9517 17.9679 71.9517 15.2086C71.9517 12.4492 72.9586 10.2995 74.9724 8.75936C77.0076 7.19786 79.7176 6.41711 83.1025 6.41711C86.4874 6.41711 89.1868 7.19786 91.2006 8.75936C93.2358 10.2995 94.2534 12.4492 94.2534 15.2086C94.2534 17.9679 93.2358 20.1283 91.2006 21.6898C89.1868 23.2299 86.4874 24 83.1025 24C79.7176 24 77.0076 23.2299 74.9724 21.6898ZM77.736 10.9733C76.4292 12.0428 75.7757 13.4545 75.7757 15.2086C75.7757 16.9626 76.4292 18.3743 77.736 19.4438C79.0428 20.5134 80.8317 21.0481 83.1025 21.0481C85.352 21.0481 87.1301 20.5134 88.437 19.4438C89.7652 18.3529 90.4293 16.9412 90.4293 15.2086C90.4293 13.4759 89.7652 12.0749 88.437 11.0053C87.1301 9.91444 85.352 9.36898 83.1025 9.36898C80.8317 9.36898 79.0428 9.90374 77.736 10.9733Z" fill="#D11011"/>
-            <path d="M131.174 1.15508H135.416L127.382 23.615H121.341L114.881 3.75401L108.294 23.615H102.22L94.3149 1.15508H98.6853L105.434 21.016L112.021 1.15508H117.806L124.329 21.0481L131.174 1.15508Z" fill="white"/>
-            <path d="M138.489 21.6898C136.476 20.1283 135.469 17.9679 135.469 15.2086C135.469 12.4492 136.476 10.2995 138.489 8.75936C140.525 7.19786 143.235 6.41711 146.62 6.41711C150.004 6.41711 152.704 7.19786 154.718 8.75936C156.753 10.2995 157.77 12.4492 157.77 15.2086C157.77 17.9679 156.753 20.1283 154.718 21.6898C152.704 23.2299 150.004 24 146.62 24C143.235 24 140.525 23.2299 138.489 21.6898ZM141.253 10.9733C139.946 12.0428 139.293 13.4545 139.293 15.2086C139.293 16.9626 139.946 18.3743 141.253 19.4438C142.56 20.5134 144.349 21.0481 146.62 21.0481C148.869 21.0481 150.647 20.5134 151.954 19.4438C153.282 18.3529 153.946 16.9412 153.946 15.2086C153.946 13.4759 153.282 12.0749 151.954 11.0053C150.647 9.91444 148.869 9.36898 146.62 9.36898C144.349 9.36898 142.56 9.90374 141.253 10.9733Z" fill="white"/>
-            <path d="M172.271 6.41711C173.106 6.41711 173.984 6.50267 174.906 6.6738V10.0749C173.599 9.92513 172.57 9.85027 171.821 9.85027C169.657 9.85027 168.061 10.4599 167.033 11.6791C166.004 12.877 165.49 14.7487 165.49 17.2941V23.615H161.634L161.666 6.80214H165.201V11.1979C165.822 9.63636 166.743 8.4492 167.964 7.63636C169.186 6.82353 170.621 6.41711 172.271 6.41711Z" fill="white"/>
-            <path d="M178.549 0H182.405V23.615H178.549V0Z" fill="white"/>
-            <path d="M204.144 0H208V23.615H204.465V19.9251C203.715 21.2513 202.601 22.2674 201.123 22.9733C199.666 23.6578 197.985 24 196.078 24C193.143 24 190.765 23.2192 188.944 21.6578C187.144 20.0963 186.245 17.9465 186.245 15.2086C186.245 12.4706 187.144 10.3209 188.944 8.75936C190.765 7.19786 193.154 6.41711 196.11 6.41711C199.881 6.41711 202.558 7.61497 204.144 10.0107V0ZM197.203 21.0481C199.388 21.0481 201.123 20.5134 202.408 19.4438C203.694 18.3743 204.337 16.9626 204.337 15.2086C204.337 13.4545 203.694 12.0428 202.408 10.9733C201.123 9.90374 199.388 9.36898 197.203 9.36898C194.996 9.36898 193.25 9.90374 191.965 10.9733C190.701 12.0428 190.069 13.4545 190.069 15.2086C190.069 16.9626 190.701 18.3743 191.965 19.4438C193.25 20.5134 194.996 21.0481 197.203 21.0481Z" fill="white"/>
-          </svg>            
+          <logo/>            
         </div>
         <div class="w-[70%] flex justify-end items-center">
           <ul class="flex justify-between w-[60%]">
@@ -76,7 +67,6 @@ import handGlobe from './components/handGlobe.vue';
       <!-- Header End -->
       <!-- Body Start -->
       <div class="w-full h-[570px]">
-
       </div>
       <!-- Body End -->
     </div>
@@ -132,20 +122,112 @@ import handGlobe from './components/handGlobe.vue';
     <!-- Counts Start -->
     <div class="2xl:w-[1920px] xl:w-[1800px] lg:w-[1300px] h-[700px] mx-auto mt-24 flex justify-between">
       <div class="w-1/2 flex flex-col justify-between">
-        <div class="text-mWhite">Надежный партнер в мировых поставках</div>
-        <div class="text-mWhite">В RavoWorld мы стремимся не просто к доставке грузов — мы создаем путеводитель для вашего успеха. Прошагайте за границы обыденности вместе с нами, где каждая доставка становится историей.</div>
+        <div class="text-mWhite font-semibold text-[60px] w-2/3 pr-8">
+          <span>Надежный партнер в мировых поставках</span>
+        </div>
+        <div class="text-mWhite w-2/3 pr-8">
+          <span class="text-base font-normal">
+            В RavoWorld мы стремимся не просто к доставке грузов — мы создаем путеводитель для вашего успеха. Прошагайте за границы обыденности вместе с нами, где каждая доставка становится историей.
+          </span>
+        </div>
       </div>
       <div class="w-1/2 grid grid-cols-2 gap-10 pl-10">
-        <div class="border border-mRed rounded-2xl">123</div>
-        <div class="border border-mRed rounded-2xl">154</div>
-        <div class="border border-mRed rounded-2xl">8788</div>
-        <div class="border border-mRed rounded-2xl">933</div>
+        <div class="border border-2Gray bg-2Black rounded-2xl flex flex-col justify-between items-start p-8 text-mWhite">
+          <div>1230</div>
+          <div class="tracking-wider">стран-партнеров</div>
+        </div>
+        <div class="border border-2Gray bg-2Black rounded-2xl flex flex-col justify-between items-start p-8 text-mWhite">
+          <div>1230</div>
+          <div class="tracking-wider">год основания</div>
+        </div>
+        <div class="border border-2Gray bg-2Black rounded-2xl flex flex-col justify-between items-start p-8 text-mWhite">
+          <div>1230</div>
+          <div class="tracking-wider">довольных клиентов</div>
+        </div>
+        <div class="border border-2Gray bg-2Black rounded-2xl flex flex-col justify-between items-start p-8 text-mWhite">
+          <div>1230</div>
+          <div class="tracking-wider">осуществленных перевозок</div>
+        </div>
       </div>
     </div>
     <!-- Counts End -->
+    <!-- Contact Start -->
+    <div class="2xl:w-[1920px] xl:w-[1800px] lg:w-[1300px] mx-auto mt-24 flex flex-col">
+      <div class="w-full mt-14">
+        <div class="text-mWhite text-[54px] font-medium w-1/2 flex flex-col tracking-wider">
+          <span>Сделайте шаг к нам:</span> 
+          <span>ваше будущее в наших руках</span>
+        </div>
+      </div>
+      <div class="w-full h-[500px] grid grid-cols-3 gap-14 mt-14 py-8">
+        <div class="border border-2Gray col-span-1 py-[72px] px-[64px] bg-3Black rounded-xl">
+          <h2 class="text-4xl text-mWhite">Контакты</h2>
+          <div class="flex justify-start text-mWhite mt-8" >
+            <svg class="mt-1" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="#D11011" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="#D11011" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div class="flex flex-col ml-4">
+              <span class="text-[20px] font-semibold">Адрес</span>
+              <div class="w-3/5 text-sm font-normal mt-2">100200, Республика Узбекистан 
+                г. Ташкент, ул. Махтумкули</div>
+            </div>
+          </div>
+          <div class="flex justify-start text-mWhite mt-8" >
+            <svg class="mt-1" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M21.9999 16.9201V19.9201C22.0011 20.1986 21.944 20.4743 21.8324 20.7294C21.7209 20.9846 21.5572 21.2137 21.352 21.402C21.1468 21.5902 20.9045 21.7336 20.6407 21.8228C20.3769 21.912 20.0973 21.9452 19.8199 21.9201C16.7428 21.5857 13.7869 20.5342 11.1899 18.8501C8.77376 17.3148 6.72527 15.2663 5.18993 12.8501C3.49991 10.2413 2.44818 7.27109 2.11993 4.1801C2.09494 3.90356 2.12781 3.62486 2.21643 3.36172C2.30506 3.09859 2.4475 2.85679 2.6347 2.65172C2.82189 2.44665 3.04974 2.28281 3.30372 2.17062C3.55771 2.05843 3.83227 2.00036 4.10993 2.0001H7.10993C7.59524 1.99532 8.06572 2.16718 8.43369 2.48363C8.80166 2.80008 9.04201 3.23954 9.10993 3.7201C9.23656 4.68016 9.47138 5.62282 9.80993 6.5301C9.94448 6.88802 9.9736 7.27701 9.89384 7.65098C9.81408 8.02494 9.6288 8.36821 9.35993 8.6401L8.08993 9.9101C9.51349 12.4136 11.5864 14.4865 14.0899 15.9101L15.3599 14.6401C15.6318 14.3712 15.9751 14.1859 16.3491 14.1062C16.723 14.0264 17.112 14.0556 17.4699 14.1901C18.3772 14.5286 19.3199 14.7635 20.2799 14.8901C20.7657 14.9586 21.2093 15.2033 21.5265 15.5776C21.8436 15.9519 22.0121 16.4297 21.9999 16.9201Z" stroke="#D11011" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>              
+            <div class="flex flex-col ml-4">
+              <span class="text-[20px] font-semibold">Телефон</span>
+              <span class="text-sm font-normal mt-2">+998 (90) 123 45 67</span>
+            </div>
+          </div>
+          <div class="flex justify-start text-mWhite mt-8" >
+            <svg class="mt-1" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 4.00098H20C21.1 4.00098 22 4.90098 22 6.00098V18.001C22 19.101 21.1 20.001 20 20.001H4C2.9 20.001 2 19.101 2 18.001V6.00098C2 4.90098 2.9 4.00098 4 4.00098Z" stroke="#D11011" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M22 6.00098L12 13.001L2 6.00098" stroke="#D11011" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>                         
+            <div class="flex flex-col ml-4">
+              <span class="text-[20px] font-semibold">Эл. почта</span>
+              <span class="text-sm font-normal mt-2">info@ravoworld.com</span>
+            </div>
+          </div>
+        </div>
+        <div class="h-full col-span-2">
+          <img class="h-[500px] w-full rounded-xl" src="/public/img/map.jpg"/>
+        </div>
+      </div>
+    </div>
+    <!-- Contact Start -->
+    <div class="2xl:w-[1920px] xl:w-[1800px] lg:w-[1300px] mx-auto mt-14">
+      <!-- Navbar Start -->
+      <div class="w-full py-8 flex justify-between items-center">
+        <div class="w-[30%] text-[36px] flex items-center">
+          <logo/>           
+        </div>
+        <div class="w-[70%] flex justify-end items-center">
+          <ul class="flex justify-between w-[60%]">
+            <li class="text-mGray text-2xl hover:text-mRed underline-hover">Главная</li>
+            <li class="text-mGray text-2xl hover:text-mRed underline-hover">Услуги</li>
+            <li class="text-mGray text-2xl hover:text-mRed underline-hover">Преимущества</li>
+            <li class="text-mGray text-2xl hover:text-mRed underline-hover">О компании</li>
+            <li class="text-mGray text-2xl hover:text-mRed underline-hover">Контакты</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Navbar End -->
+    </div>
+    <div style="border: 1px solid rgba(255, 255, 255, 0.10);"></div>
+    <div class="2xl:w-[1920px] xl:w-[1800px] lg:w-[1300px] mx-auto flex justify-between items-center text-mWhite opacity-20 my-4">
+      <span>©2020-2023 RavoWorld. Все права защищены</span>
+      <span>designed by Nextmark</span>
+    </div>
   </div>
 </template>
-<style>
+<style >
+body {
+  background-color: #0b1117;
+}
 .underline-hover {
   position: relative;
   display: inline-block;
@@ -164,6 +246,20 @@ import handGlobe from './components/handGlobe.vue';
 .underline-hover:hover::before {
   background-color: #D11011; /* Change the color on hover */
 }
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #0b1117;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #101922;
+}
+
 </style>
 
 
