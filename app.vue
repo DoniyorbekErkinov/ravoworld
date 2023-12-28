@@ -5,7 +5,7 @@ import logo from './components/logo.vue';
 
 <template>
   <div class="h-full flex flex-col scrollbarActive overflow-y-hidden">
-    <div class="2xl:w-[1920px] xl:w-[1800px] lg:w-[1300px] mx-auto">
+    <div class="xxl:w-[1920px] xl:w-[1800px] lg:w-[1300px] mx-auto">
       <!-- Navbar Start -->
       <div class="w-full py-8 flex justify-between items-center">
         <div class="w-[30%] text-[36px] flex items-center">
@@ -52,7 +52,7 @@ import logo from './components/logo.vue';
     </div>
     <!-- Banner Image -->
     <!-- Carausel Header Start -->
-    <div class="2xl:w-[1920px] xl:w-[1800px] lg:w-[1300px] mx-auto mt-24">
+    <div class="xxl:w-[1920px] xl:w-[1800px] lg:w-[1300px] mx-auto mt-24">
       <!-- Header Start -->
       <div class="w-full flex justify-between">
         <div class="flex flex-col w-1/2">
@@ -72,7 +72,7 @@ import logo from './components/logo.vue';
     </div>
     <!-- Carausel Header End -->
     <!-- Result Start -->
-    <div class="2xl:w-[1920px] xl:w-[1800px] lg:w-[1300px] mx-auto my-24">
+    <div class="xxl:w-[1920px] xl:w-[1800px] lg:w-[1300px] mx-auto my-24">
       <div class="w-[70%] mx-auto flex flex-col items-center">
         <div class="flex justify-end items-center w-full">
           <div class="w-[40%] flex justify-end mx-auto">
@@ -120,7 +120,7 @@ import logo from './components/logo.vue';
     </div>
     <!-- Result End -->
     <!-- Counts Start -->
-    <div class="2xl:w-[1920px] xl:w-[1800px] lg:w-[1300px] h-[700px] mx-auto mt-24 flex justify-between">
+    <div class="xxl:w-[1920px] xl:w-[1800px] lg:w-[1300px] h-[700px] mx-auto mt-24 flex justify-between">
       <div class="w-1/2 flex flex-col justify-between">
         <div class="text-mWhite font-semibold text-[60px] w-2/3 pr-8">
           <span>Надежный партнер в мировых поставках</span>
@@ -152,7 +152,7 @@ import logo from './components/logo.vue';
     </div>
     <!-- Counts End -->
     <!-- Contact Start -->
-    <div class="2xl:w-[1920px] xl:w-[1800px] lg:w-[1300px] mx-auto mt-24 flex flex-col">
+    <div class="xxl:w-[1920px] xl:w-[1800px] lg:w-[1300px] mx-auto mt-24 flex flex-col">
       <div class="w-full mt-14">
         <div class="text-mWhite text-[54px] font-medium w-1/2 flex flex-col tracking-wider">
           <span>Сделайте шаг к нам:</span> 
@@ -199,7 +199,7 @@ import logo from './components/logo.vue';
       </div>
     </div>
     <!-- Contact Start -->
-    <div class="2xl:w-[1920px] xl:w-[1800px] lg:w-[1300px] mx-auto mt-14">
+    <div class="xxl:w-[1920px] xl:w-[1800px] lg:w-[1300px] mx-auto mt-14">
       <!-- Navbar Start -->
       <div class="w-full py-8 flex justify-between items-center">
         <div class="w-[30%] text-[36px] flex items-center">
@@ -218,7 +218,7 @@ import logo from './components/logo.vue';
       <!-- Navbar End -->
     </div>
     <div style="border: 1px solid rgba(255, 255, 255, 0.10);"></div>
-    <div class="2xl:w-[1920px] xl:w-[1800px] lg:w-[1300px] mx-auto flex justify-between items-center text-mWhite opacity-20 my-4">
+    <div class="xxl:w-[1920px] xl:w-[1800px] lg:w-[1300px] mx-auto flex justify-between items-center text-mWhite opacity-20 my-4">
       <span>©2020-2023 RavoWorld. Все права защищены</span>
       <span>designed by Nextmark</span>
     </div>
