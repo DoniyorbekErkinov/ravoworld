@@ -57,7 +57,6 @@ onMounted(() => {
   }, 2500)
 
   document.addEventListener('scroll', (event) => {
-    console.log(event);
     if (window.pageYOffset > 2200) {
       let numberCount1 = setInterval(() => {
                 if (count1.value < 30) count1.value++
