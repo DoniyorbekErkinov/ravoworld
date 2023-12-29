@@ -5,7 +5,7 @@ import logo from './components/logo.vue';
 
 <template>
   <div class="h-full flex flex-col scrollbarActive overflow-y-hidden">
-    <div class="xxl:w-[1920px] xl:w-[1800px] lg:w-[1300px] mx-auto">
+    <div class="xxl:w-[1920px] xl_l:w-[1920px] xl:w-[1800px] lg:w-[1300px] mx-auto">
       <!-- Navbar Start -->
       <div class="w-full py-8 flex justify-between items-center">
         <div class="w-[30%] text-[36px] flex items-center">
