@@ -18,8 +18,8 @@ module.exports = {
       slg: '1280px',
       lg: '1440px',
       xl: '1900px',
-      xl_l: '2000px',
-      xxl: '2300px'
+      xxl: '2300px',
+      xxxl: '4000px'
     },
     colors: {
       transparent: 'transparent',
