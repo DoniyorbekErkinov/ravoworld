@@ -5,7 +5,7 @@ import logo from './components/logo.vue';
 
 <template>
   <div class="h-full flex flex-col scrollbarActive overflow-y-hidden">
-    <div class="xxl:w-[1920px] xxxl:w-[1920px] xl:w-[1800px] lg:w-[1300px] mx-auto">
+    <div class="xxl:w-[1350px] xl:w-[1350px] lg:w-[1300px] mx-auto">
       <!-- Navbar Start -->
       <div class="w-full py-8 flex justify-between items-center">
         <div class="w-[30%] text-[36px] flex items-center">
@@ -13,11 +13,11 @@ import logo from './components/logo.vue';
         </div>
         <div class="w-[70%] flex justify-end items-center">
           <ul class="flex justify-between w-[60%]">
-            <li class="text-mGray text-2xl hover:text-mRed underline-hover">Главная</li>
-            <li class="text-mGray text-2xl hover:text-mRed underline-hover">Услуги</li>
-            <li class="text-mGray text-2xl hover:text-mRed underline-hover">Преимущества</li>
-            <li class="text-mGray text-2xl hover:text-mRed underline-hover">О компании</li>
-            <li class="text-mGray text-2xl hover:text-mRed underline-hover">Контакты</li>
+            <li class="text-mGray text-lg hover:text-mRed underline-hover">Главная</li>
+            <li class="text-mGray text-lg hover:text-mRed underline-hover">Услуги</li>
+            <li class="text-mGray text-lg hover:text-mRed underline-hover">Преимущества</li>
+            <li class="text-mGray text-lg hover:text-mRed underline-hover">О компании</li>
+            <li class="text-mGray text-lg hover:text-mRed underline-hover">Контакты</li>
           </ul>
           <div class="flex justify-end w-[40%]">
             <div class="text-mGray text-2xl mr-20">Ru</div>
@@ -32,7 +32,7 @@ import logo from './components/logo.vue';
       </div>
       <!-- Navbar End -->
       <!-- Under Navbar Start -->
-      <div class="w-full py-14 mt-14 flex justify-between items-center">
+      <div class="w-full py-14 mt-14 flex justify-between items-center relative">
         <div class="flex flex-col w-1/2">
           <span class="text-mWhite text-[56px] font-semibold">Мгновенная</span>
           <div>
@@ -40,19 +40,19 @@ import logo from './components/logo.vue';
           </div>
         </div>
         <div class="flex justify-end items-center pt-6 w-1/2">
-          <div class="text-2Gray w-1/2 flex justify-end text-lg font-normal leading-6">Быстро, эффективно, без лишних хлопот. Наша компания предлагает экспресс-грузоперевозки</div>
+          <div class="text-2Gray w-4/5 flex justify-end text-lg font-normal leading-6">Быстро, эффективно, без лишних хлопот. Наша компания предлагает экспресс-грузоперевозки</div>
         </div>
+        <div class="w-36 h-36 rounded-full bg-mRed absolute top-[80%] right-[50px] flex justify-center items-center text-mWhite text-base font-normal tracking-wider">Связаться</div>
       </div>
       <!-- Under Navbar End -->
     </div>
     <!-- Banner Image -->
-    <div class="w-full h-[700px] relative">
-      <img class="w-full max-w-full h-[700px] " src="public/img/banner.jpg"/>
-      <div class="w-36 h-36 rounded-full bg-mRed absolute -top-[50px] right-[220px] flex justify-center items-center text-mWhite text-base font-normal tracking-wider">Связаться</div>
+    <div class="w-full h-[700px]">
+      <img class="w-full max-w-full h-[700px] " src="public/img/banner.jpg"/>      
     </div>
     <!-- Banner Image -->
     <!-- Carausel Header Start -->
-    <div class="xxl:w-[1920px] xl:w-[1800px] lg:w-[1300px] mx-auto mt-24">
+    <div class="xxl:w-[1350px] xl:w-[1350px] lg:w-[1300px] mx-auto mt-24">
       <!-- Header Start -->
       <div class="w-full flex justify-between">
         <div class="flex flex-col w-1/2">
@@ -60,8 +60,8 @@ import logo from './components/logo.vue';
           <div class="text-mWhite text-[40px] font-semibold tracking-wider">на <span class="text-mRed text-[40px] font-semibold tracking-wider">высшем уровне</span>
           </div>
         </div>
-        <div class="flex justify-center items-center w-1/2 text-2Gray">
-          <div class="w-[45%] text-base font-normal ml-14">Это не просто перемещение товаров через границы, это создание надежных путей для вашего бизнеса</div>
+        <div class="flex justify-end items-center w-1/2 text-2Gray">
+          <div class="w-[60%] text-base font-normal ml-14">Это не просто перемещение товаров через границы, это создание надежных путей для вашего бизнеса</div>
         </div>  
       </div>
       <!-- Header End -->
@@ -72,15 +72,15 @@ import logo from './components/logo.vue';
     </div>
     <!-- Carausel Header End -->
     <!-- Result Start -->
-    <div class="xxl:w-[1920px] xl:w-[1800px] lg:w-[1300px] mx-auto my-24">
+    <div class="xxl:w-[1350px] xl:w-[1350px] lg:w-[1300px] mx-auto my-24">
       <div class="w-[70%] mx-auto flex flex-col items-center">
         <div class="flex justify-end items-center w-full">
-          <div class="w-[40%] flex justify-end mx-auto">
+          <div class="w-[65%] flex justify-end mx-auto">
             <span class="text-mWhite text-[36px] tracking-wider">Персональный </span> <span class="text-mRed text-[36px] tracking-wider ml-4"> подход</span>
           </div>
         </div>
         <div class="flex justify-start items-center w-full">
-          <div class="w-[40%] flex justify-start mx-auto">
+          <div class="w-[65%] flex justify-start mx-auto">
             <span class="text-mWhite text-[36px] tracking-wider">Глобальные </span> <span class="text-mRed text-[36px] tracking-wider ml-4"> результаты</span>
           </div>
         </div>
@@ -120,12 +120,13 @@ import logo from './components/logo.vue';
     </div>
     <!-- Result End -->
     <!-- Counts Start -->
-    <div class="xxl:w-[1920px] xl:w-[1800px] lg:w-[1300px] h-[700px] mx-auto mt-24 flex justify-between">
+    <div class="xxl:w-[1350px] xl:w-[1350px] lg:w-[1300px] h-[700px] mx-auto mt-24 flex justify-between">
       <div class="w-1/2 flex flex-col justify-between">
-        <div class="text-mWhite font-semibold text-[60px] w-2/3 pr-8">
-          <span>Надежный партнер в мировых поставках</span>
+        <div class="text-mWhite flex flex-col tracking-wider font-semibold text-[40px] w-full pr-8">
+          <span>Надежный партнер </span>
+          <span>в мировых поставках </span>
         </div>
-        <div class="text-mWhite w-2/3 pr-8">
+        <div class="text-mWhite w-4/5 pr-8">
           <span class="text-base font-normal">
             В RavoWorld мы стремимся не просто к доставке грузов — мы создаем путеводитель для вашего успеха. Прошагайте за границы обыденности вместе с нами, где каждая доставка становится историей.
           </span>
@@ -152,24 +153,24 @@ import logo from './components/logo.vue';
     </div>
     <!-- Counts End -->
     <!-- Contact Start -->
-    <div class="xxl:w-[1920px] xl:w-[1800px] lg:w-[1300px] mx-auto mt-24 flex flex-col">
+    <div class="xxl:w-[1350px] xl:w-[1350px] lg:w-[1300px] mx-auto mt-24 flex flex-col">
       <div class="w-full mt-14">
-        <div class="text-mWhite text-[54px] font-medium w-1/2 flex flex-col tracking-wider">
+        <div class="text-mWhite text-[40px] font-medium flex flex-col tracking-wider">
           <span>Сделайте шаг к нам:</span> 
           <span>ваше будущее в наших руках</span>
         </div>
       </div>
-      <div class="w-full h-[500px] grid grid-cols-3 gap-14 mt-14 py-8">
+      <div class="w-full h-[500px] grid grid-cols-3 gap-8 mt-14 py-8">
         <div class="border border-2Gray col-span-1 py-[72px] px-[64px] bg-3Black rounded-xl">
           <h2 class="text-4xl text-mWhite">Контакты</h2>
           <div class="flex justify-start text-mWhite mt-8" >
-            <svg class="mt-1" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg class="mt-1" width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="#D11011" stroke-linecap="round" stroke-linejoin="round"/>
               <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="#D11011" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
             <div class="flex flex-col ml-4">
               <span class="text-[20px] font-semibold">Адрес</span>
-              <div class="w-3/5 text-sm font-normal mt-2">100200, Республика Узбекистан 
+              <div class="w-4/5 text-sm font-normal mt-2">100200, Республика Узбекистан 
                 г. Ташкент, ул. Махтумкули</div>
             </div>
           </div>
@@ -199,7 +200,7 @@ import logo from './components/logo.vue';
       </div>
     </div>
     <!-- Contact Start -->
-    <div class="xxl:w-[1920px] xl:w-[1800px] lg:w-[1300px] mx-auto mt-14">
+    <div class="xxl:w-[1350px] xl:w-[1350px] lg:w-[1300px] mx-auto mt-14">
       <!-- Navbar Start -->
       <div class="w-full py-8 flex justify-between items-center">
         <div class="w-[30%] text-[36px] flex items-center">
@@ -218,7 +219,7 @@ import logo from './components/logo.vue';
       <!-- Navbar End -->
     </div>
     <div style="border: 1px solid rgba(255, 255, 255, 0.10);"></div>
-    <div class="xxl:w-[1920px] xl:w-[1800px] lg:w-[1300px] mx-auto flex justify-between items-center text-mWhite opacity-20 my-4">
+    <div class="xxl:w-[1350px] xl:w-[1350px] lg:w-[1300px] mx-auto flex justify-between items-center text-mWhite opacity-20 my-4">
       <span>©2020-2023 RavoWorld. Все права защищены</span>
       <span>designed by Nextmark</span>
     </div>
