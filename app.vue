@@ -31,7 +31,10 @@ const cData = ref([
     text: 'Представляем профессиональное руководство через лабиринт таможенных процедур, обеспечивая клиентам беззаботный и эффективный переход через границы. Мы — ваш надежный гид в мире таможенных формальностей, где опытные специалисты внимательно следят.',    
   }
 ])
-
+const count1 = ref(0)
+const count2 = ref(0)
+const count3 = ref(0)
+const count4 = ref(0)
 function changeCurrentItem(side) {
   if (side == 'left') {
     if (currentItem.value == 1) {
@@ -52,6 +55,36 @@ onMounted(() => {
   setInterval(() => {
     changeCurrentItem('right')
   }, 2500)
+
+  document.addEventListener('scroll', (event) => {
+    console.log(event);
+    if (window.pageYOffset > 2200) {
+      let numberCount1 = setInterval(() => {
+                if (count1.value < 30) count1.value++
+                if (count1.value === 30) {
+                    clearInterval(numberCount1)
+                }
+            }, 100)      
+      let numberCount2 = setInterval(() => {
+                if (count2.value < 2020) count2.value++
+                if (count2.value === 2020) {
+                    clearInterval(numberCount2)
+                }
+            }, 100)      
+      let numberCount3 = setInterval(() => {
+                if (count3.value < 440) count3.value++
+                if (count3.value === 440) {
+                    clearInterval(numberCount3)
+                }
+            }, 100)      
+      let numberCount4 = setInterval(() => {
+                if (count4.value < 500) count4.value++
+                if (count4.value === 500) {
+                    clearInterval(numberCount4)
+                }
+            }, 100)      
+    }
+  })
 })
 </script>
 
@@ -216,19 +249,19 @@ onMounted(() => {
       </div>
       <div class="w-1/2 grid grid-cols-2 gap-10 pl-10">
         <div class="border border-2Gray bg-2Black rounded-2xl flex flex-col justify-between items-start p-8 text-mWhite">
-          <div>1230</div>
+          <div class="text-[48px] font-bold">{{count1}}</div>
           <div class="tracking-wider">стран-партнеров</div>
         </div>
         <div class="border border-2Gray bg-2Black rounded-2xl flex flex-col justify-between items-start p-8 text-mWhite">
-          <div>1230</div>
+          <div class="text-[48px] font-bold">{{count1}}</div>
           <div class="tracking-wider">год основания</div>
         </div>
         <div class="border border-2Gray bg-2Black rounded-2xl flex flex-col justify-between items-start p-8 text-mWhite">
-          <div>1230</div>
+          <div class="text-[48px] font-bold">{{count3}}</div>
           <div class="tracking-wider">довольных клиентов</div>
         </div>
         <div class="border border-2Gray bg-2Black rounded-2xl flex flex-col justify-between items-start p-8 text-mWhite">
-          <div>1230</div>
+          <div class="text-[48px] font-bold">{{count4}}+</div>
           <div class="tracking-wider">осуществленных перевозок</div>
         </div>
       </div>
