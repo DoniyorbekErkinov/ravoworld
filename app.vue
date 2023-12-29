@@ -256,7 +256,7 @@ onMounted(() => {
           <div class="tracking-wider">стран-партнеров</div>
         </div>
         <div class="border border-2Gray bg-2Black rounded-2xl flex flex-col justify-between items-start p-8 text-mWhite">
-          <div class="text-[48px] font-bold">{{count1}}</div>
+          <div class="text-[48px] font-bold">{{count2}}</div>
           <div class="tracking-wider">год основания</div>
         </div>
         <div class="border border-2Gray bg-2Black rounded-2xl flex flex-col justify-between items-start p-8 text-mWhite">
