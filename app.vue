@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import handGlobe from './components/handGlobe.vue';
 import logo from './components/logo.vue';
 
@@ -31,6 +31,28 @@ const cData = ref([
     text: 'Представляем профессиональное руководство через лабиринт таможенных процедур, обеспечивая клиентам беззаботный и эффективный переход через границы. Мы — ваш надежный гид в мире таможенных формальностей, где опытные специалисты внимательно следят.',    
   }
 ])
+
+function changeCurrentItem(side) {
+  if (side == 'left') {
+    if (currentItem.value == 1) {
+      currentItem.value = 5
+    } else {
+      currentItem.value = currentItem.value - 1
+    }
+  } else {
+    if (currentItem.value == 5) {
+      currentItem.value = 1
+    } else {
+      currentItem.value = currentItem.value + 1
+    }
+  }
+}
+
+onMounted(() => {
+  setInterval(() => {
+    changeCurrentItem('right')
+  }, 2500)
+})
 </script>
 
 <template>
@@ -96,18 +118,34 @@ const cData = ref([
       </div>
       <!-- Header End -->
       <!-- Body Start -->
-      <div v-for="(item, i) in cData" :class="currentItem == (i+1) ? 'flex justify-between' : 'hidden'" :key="i" class="w-full h-[570px]">
+      <div v-for="(item, i) in cData" :class="currentItem == (i+1) ? 'flex justify-between transition duration-[4000ms] ease-in-out' : 'hidden transition duration-[4000ms] ease-in-out'" :key="i" class="w-full h-[570px] mt-20">
         <div class="w-[85%] h-full flex justify-between">
-          <div class="w-1/2 h-full">
-            <span>
+          <div class="w-1/2 h-full flex flex-col py-14 mt-14">
+            <div class="text-mWhite w-4/5 text-2xl font-medium transition duration-[4000ms] ease-in-out">
               {{ item.title }}
-            </span>
-            <span>
+            </div>
+            <div class="w-9/12 mt-8 text-mGray transition duration-[4000ms] ease-in-out">
               {{ item.text }}
-            </span>
+            </div>
+            <div class="w-full flex items-center flex-1">
+              <div  @click="changeCurrentItem('left')" class="w-14 h-14 rounded-full flex justify-center items-center group border border-mRed hover:bg-mRed rotate-180 opacity-60 hover:opacity-100">
+                <svg class="stroke-mRed group-hover:stroke-mWhite" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 18L15 12L9 6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+
+              </div>
+              <div class="text-mWhite ml-4">
+                <span class="text-2xl">{{ i + 1 }}</span> / {{ cData.length }}
+              </div>
+              <div @click="changeCurrentItem('right')"  class=" w-14 h-14 rounded-full flex justify-center items-center group border border-mRed hover:bg-mRed ml-4">
+                <svg class="stroke-mRed group-hover:stroke-mWhite" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 18L15 12L9 6"  stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </div>
           </div>
           <div class="w-1/2 h-full">
-            <img :src="item.img"/>
+            <img class="rounded-3xl transition duration-[4000ms] ease-in-out" :src="item.img"/>
           </div>
         </div>
         <div class="w-[15%] h-full"></div>
