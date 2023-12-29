@@ -1,6 +1,36 @@
-<script>
+<script setup>
+import { ref } from 'vue'
 import handGlobe from './components/handGlobe.vue';
 import logo from './components/logo.vue';
+
+const currentItem = ref(1)
+const cData = ref([
+  {
+    img: '/img/c-img-1.jpg',
+    title: 'Международные грузоперевозки',
+    text: 'Это не просто перемещение товаров через границы, это создание надежных путей для вашего бизнеса на мировой арене. Мы предлагаем комплексные логистические решения, обеспечивающие эффективную и безопасную доставку грузов в любую точку планеты',    
+  },
+  {
+    img: '/img/c-img-2.jpg',
+    title: 'Таможенное Брокерство',
+    text: 'Представляем профессиональное руководство через лабиринт таможенных процедур, обеспечивая клиентам беззаботный и эффективный переход через границы. Мы — ваш надежный гид в мире таможенных формальностей, где опытные специалисты внимательно следят.',    
+  },
+  {
+    img: '/img/c-img-2.jpg',
+    title: 'Таможенное Брокерство 3',
+    text: 'Представляем профессиональное руководство через лабиринт таможенных процедур, обеспечивая клиентам беззаботный и эффективный переход через границы. Мы — ваш надежный гид в мире таможенных формальностей, где опытные специалисты внимательно следят.',    
+  },
+  {
+    img: '/img/c-img-2.jpg',
+    title: 'Таможенное Брокерство 4',
+    text: 'Представляем профессиональное руководство через лабиринт таможенных процедур, обеспечивая клиентам беззаботный и эффективный переход через границы. Мы — ваш надежный гид в мире таможенных формальностей, где опытные специалисты внимательно следят.',    
+  },
+  {
+    img: '/img/c-img-2.jpg',
+    title: 'Таможенное Брокерство 5',
+    text: 'Представляем профессиональное руководство через лабиринт таможенных процедур, обеспечивая клиентам беззаботный и эффективный переход через границы. Мы — ваш надежный гид в мире таможенных формальностей, где опытные специалисты внимательно следят.',    
+  }
+])
 </script>
 
 <template>
@@ -51,7 +81,7 @@ import logo from './components/logo.vue';
       <img class="w-full max-w-full h-[700px] " src="public/img/banner.jpg"/>      
     </div>
     <!-- Banner Image -->
-    <!-- Carausel Header Start -->
+    <!-- Carausel Start -->
     <div class="xxl:w-[1350px] xl:w-[1350px] lg:w-[1300px] mx-auto mt-24">
       <!-- Header Start -->
       <div class="w-full flex justify-between">
@@ -66,11 +96,25 @@ import logo from './components/logo.vue';
       </div>
       <!-- Header End -->
       <!-- Body Start -->
-      <div class="w-full h-[570px]">
+      <div v-for="(item, i) in cData" :class="currentItem == (i+1) ? 'flex justify-between' : 'hidden'" :key="i" class="w-full h-[570px]">
+        <div class="w-[85%] h-full flex justify-between">
+          <div class="w-1/2 h-full">
+            <span>
+              {{ item.title }}
+            </span>
+            <span>
+              {{ item.text }}
+            </span>
+          </div>
+          <div class="w-1/2 h-full">
+            <img :src="item.img"/>
+          </div>
+        </div>
+        <div class="w-[15%] h-full"></div>
       </div>
       <!-- Body End -->
     </div>
-    <!-- Carausel Header End -->
+    <!-- Carausel End -->
     <!-- Result Start -->
     <div class="xxl:w-[1350px] xl:w-[1350px] lg:w-[1300px] mx-auto my-24">
       <div class="w-[70%] mx-auto flex flex-col items-center">
