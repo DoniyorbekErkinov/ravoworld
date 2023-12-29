@@ -35,6 +35,7 @@ const count1 = ref(0)
 const count2 = ref(0)
 const count3 = ref(0)
 const count4 = ref(0)
+const intervalVar = ref(null)
 function changeCurrentItem(side) {
   if (side == 'left') {
     if (currentItem.value == 1) {
@@ -50,10 +51,13 @@ function changeCurrentItem(side) {
     }
   }
 }
-
 onMounted(() => {
-  setInterval(() => {
-    changeCurrentItem('right')
+  let carouselInterval = setInterval(() => {
+    if (window.pageYOffset > 250 && window.pageYOffset < 2125) {        
+      changeCurrentItem('right')
+    } else {
+      clearInterval(carouselInterval)      
+    }
   }, 2500)
 
   document.addEventListener('scroll', (event) => {
@@ -82,7 +86,7 @@ onMounted(() => {
                     clearInterval(numberCount4)
                 }
             }, 100)      
-    }
+    }   
   })
 })
 </script>
