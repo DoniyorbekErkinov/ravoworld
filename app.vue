@@ -53,7 +53,7 @@ function changeCurrentItem(side) {
 }
 onMounted(() => {
   let carouselInterval = setInterval(() => {
-    if (window.pageYOffset > 250 && window.pageYOffset < 2125) {        
+    if (window.pageYOffset > 200 && window.pageYOffset < 2500) {        
       changeCurrentItem('right')
     } else {
       clearInterval(carouselInterval)      
