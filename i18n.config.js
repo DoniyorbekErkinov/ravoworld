@@ -92,7 +92,7 @@ export default defineI18nConfig(() => ({
             },
             header: {
                 title_1: 'Tezkor',
-                title_2: 'chegarasiz',
+                title_2: 'chegarasiz ',
                 title_3: 'yetkazib berish',
                 text: 'Tez, samarali, keraksiz muammosiz. Kompaniyamiz ekspress yuk tashishni taklif qiladi',
                 circle: 'Aloqa'                

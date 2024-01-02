@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, watch } from 'vue'
 const { locale, t } = useI18n()
 import handGlobe from './components/handGlobe.vue';
 import logo from './components/logo.vue';
@@ -51,18 +51,11 @@ function changeCurrentItem(side) {
     }
   }
 }
-function highlightWords(text, wordsArray) {
-    // Escape special characters in the words array to avoid regex issues
-    const escapedWords = wordsArray.map(word => word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
-
-    // Create a regular expression pattern to match any of the words
-    const pattern = new RegExp(`\\b(${escapedWords.join('|')})\\b`, 'gi');
-
-    // Replace matched words with colored version
-    const coloredText = text.replace(pattern, '<span style="color: #D11011;">$1</span>');
-
-    return coloredText;
-}
+watch(locale, (newVal, oldVal) => {
+  console.log(newVal);
+  console.log(oldVal);
+  localStorage.setItem('locale', newVal)
+})
 onMounted(() => {
   let carouselInterval = setInterval(() => {
     if (window.pageYOffset > 200 && window.pageYOffset < 2500) {        
