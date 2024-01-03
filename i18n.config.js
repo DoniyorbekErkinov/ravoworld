@@ -68,7 +68,8 @@ export default defineI18nConfig(() => ({
                 card4: 'осуществленных перевозок',
             },
             contact: {
-                title: 'Сделайте шаг к нам: ваше будущее в наших руках',
+                title: 'Сделайте шаг к нам: ',
+                title_1: 'ваше будущее в наших руках',
                 contacts: 'Контакты',
                 address: 'Адрес',
                 address_map: '100200, Республика Узбекистан г. Ташкент, ул. Махтумкули',
@@ -142,7 +143,8 @@ export default defineI18nConfig(() => ({
                 card4: 'tashishlar amalga oshirildi',
             },
             contact: {
-                title: 'Biz tomon qadam tashlang: kelajagingiz bizning qo\'limizda',
+                title: 'Biz tomon qadam tashlang: ',
+                title_1: 'kelajagingiz bizning qo\'limizda',
                 contacts: 'Kontaktlar',
                 address: 'Manzil',
                 address_map: '100200, O\'zbekiston respublikasi sh. Ташкент, k. Maxtumquli',
@@ -216,7 +218,8 @@ export default defineI18nConfig(() => ({
                 card4: 'transportations carried out',
             },
             contact: {
-                title: 'Take a step towards us: your future is in our hands',
+                title: 'Take a step towards us: ',
+                title_1: 'your future is in our hands',
                 contacts: 'Contacts',
                 address: 'Address',
                 address_map: '100200, Republic of Uzbekistan, Tashkent, st. Magtymguly',

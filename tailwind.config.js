@@ -32,7 +32,11 @@ module.exports = {
       '2Black': '#101922',
       '3Black':'#252F38'
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        manrope: ['Manrope', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 }
