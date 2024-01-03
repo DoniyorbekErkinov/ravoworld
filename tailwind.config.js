@@ -24,10 +24,11 @@ module.exports = {
       transparent: 'transparent',
       current: 'currentColor',
       'mWhite': '#ffffff',
-      'mBlack': '#0b1117',
+      'mBlack': '#0b1117',      
       'mRed': '#D11011',
       'mGray': '#ababab',
       '2Gray': '#9DA0A2',
+      '2Black': '#101922',
       '2Black': '#101922',
       '3Black':'#252F38'
     },

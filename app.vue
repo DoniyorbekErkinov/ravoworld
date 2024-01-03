@@ -4,6 +4,8 @@ const { locale, t } = useI18n()
 import handGlobe from './components/handGlobe.vue';
 import logo from './components/logo.vue';
 import burger from './components/burger.vue';
+import cross from './components/cross.vue';
+import phone from './components/phone.vue';
 
 const currentItem = ref(1)
 const cData = ref([
@@ -93,12 +95,17 @@ onMounted(() => {
     }   
   })
 })
+
+const isSideBarOpen = ref(false)
+function openCloseSidebar() {
+  isSideBarOpen.value = !isSideBarOpen.value
+}
 </script>
 <!-- xxl:flex-row xl:flex-row lg:flex-row md:flex-row slg:flex-row flex-col -->
 <!-- xxl:w-1/2 xl:w-1/2 lg:w-1/2 md:w-1/2 slg:w-1/2 w-full -->
 <!-- xxl:px-0 xl:px-0 lg:px-0 px-8 -->
 <template>
-  <div class="h-full flex flex-col scrollbarActive overflow-y-hidden">
+  <div class="h-full flex flex-col scrollbarActive overflow-y-hidden relative">
     <div id="main" class="xxl:w-[1350px] xl:w-[1350px] lg:w-[1300px] mx-auto">
       <!-- Navbar Start -->
       <div class="w-full py-8 xxl:px-0 xl:px-0 lg:px-0 px-8 flex justify-between items-center">
@@ -125,12 +132,10 @@ onMounted(() => {
 
             </div>
             <div class="xxl:flex xl:flex lg:flex hidden text-mWhite text-2xl justify-between items-center">
-              <svg class="mr-4" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M21.9999 16.92V19.92C22.0011 20.1985 21.944 20.4741 21.8324 20.7293C21.7209 20.9845 21.5572 21.2136 21.352 21.4018C21.1468 21.5901 20.9045 21.7335 20.6407 21.8227C20.3769 21.9119 20.0973 21.945 19.8199 21.92C16.7428 21.5856 13.7869 20.5341 11.1899 18.85C8.77376 17.3146 6.72527 15.2661 5.18993 12.85C3.49991 10.2412 2.44818 7.27097 2.11993 4.17997C2.09494 3.90344 2.12781 3.62474 2.21643 3.3616C2.30506 3.09846 2.4475 2.85666 2.6347 2.6516C2.82189 2.44653 3.04974 2.28268 3.30372 2.1705C3.55771 2.05831 3.83227 2.00024 4.10993 1.99997H7.10993C7.59524 1.9952 8.06572 2.16705 8.43369 2.48351C8.80166 2.79996 9.04201 3.23942 9.10993 3.71997C9.23656 4.68004 9.47138 5.6227 9.80993 6.52997C9.94448 6.8879 9.9736 7.27689 9.89384 7.65086C9.81408 8.02482 9.6288 8.36809 9.35993 8.63998L8.08993 9.90997C9.51349 12.4135 11.5864 14.4864 14.0899 15.91L15.3599 14.64C15.6318 14.3711 15.9751 14.1858 16.3491 14.1061C16.723 14.0263 17.112 14.0554 17.4699 14.19C18.3772 14.5285 19.3199 14.7634 20.2799 14.89C20.7657 14.9585 21.2093 15.2032 21.5265 15.5775C21.8436 15.9518 22.0121 16.4296 21.9999 16.92Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>                
+              <phone/>              
               <span>+998 90 123 45 67</span>
             </div>
-            <burger class="xxl:hidden xl:hidden flex"></burger>
+            <burger @click="openCloseSidebar" class="xxl:hidden xl:hidden flex"></burger>
           </div>
         </div>
       </div>
@@ -285,7 +290,7 @@ onMounted(() => {
         </div>
       </div>
     </div>
-    <!-- Result End -->
+    <!-- Result End --> 
     <!-- Counts Start -->
     <div id="about" class="xxl:w-[1350px] xl:w-[1350px] lg:w-[1300px] w-full xxl:h-[700px] xl:h-[700px] lg:h-[700px] md:h-[700px] slg:h-[700px] h-[1550px] mx-auto xxl:mt-24 xl:mt-24 lg:mt-24 mt-0 flex xxl:flex-row xl:flex-row lg:flex-row md:flex-row slg:flex-row flex-col justify-between xxl:px-0 xl:px-0 lg:px-0 px-8">
       <div class="xxl:w-1/2 xl:w-1/2 lg:w-1/2 md:w-1/2 slg:w-1/2 w-full flex flex-col justify-between">
@@ -391,6 +396,26 @@ onMounted(() => {
     <div class="xxl:w-[1350px] xl:w-[1350px] lg:w-[1300px] w-full xxl:flex-row xl:flex-row lg:flex-row md:flex-row slg:flex-row flex-col mx-auto flex justify-between items-center text-mWhite opacity-20 my-4">
       <span class="xxl:w-full xl:w-full lg:w-full w-[46%] text-center">©2020-2023 RavoWorld. {{$t('contact.copy_right')}}</span>
       <span class="xxl:mt-0 xl:mt-0 lg:mt-0 mt-8">designed by Nextmark</span>
+    </div>
+    <div v-if="isSideBarOpen" class="bg-2Black absolute left-0 top-0 w-screen h-screen flex flex-col p-8">
+      <div class="w-full flex justify-end">
+        <cross @click="openCloseSidebar"/>
+      </div>
+      <div class="w-full flex justify-end items-center mt-20">
+        <ul class="flex justify-between w-full flex-col items-center">
+          <li class="underline-hover cursor-pointer mt-8"><a class="text-mWhite hover:text-mRed text-xl" @click="openCloseSidebar" href="#main">{{$t('menu.main')}}</a></li>
+          <li class="underline-hover cursor-pointer mt-8"><a class="text-mWhite hover:text-mRed text-xl" @click="openCloseSidebar" href="#service">{{$t('menu.service')}}</a></li>
+          <li class="underline-hover cursor-pointer mt-8"><a class="text-mWhite hover:text-mRed text-xl" @click="openCloseSidebar" href="#advantages">{{$t('menu.advantages')}}</a></li>
+          <li class="underline-hover cursor-pointer mt-8"><a class="text-mWhite hover:text-mRed text-xl" @click="openCloseSidebar" href="#about">{{$t('menu.about')}}</a></li>
+          <li class="underline-hover cursor-pointer mt-8"><a class="text-mWhite hover:text-mRed text-xl" @click="openCloseSidebar" href="#contacts">{{$t('menu.contacts')}}</a></li>
+        </ul>
+      </div>
+      <div class="w-full flex justify-center items-center mt-20">
+        <phone/><span class="text-2xl text-mWhite">+998 90 123 45 67</span>
+      </div>
+      <div class="flex flex-1 justify-center mt-24">
+        <span class="text-xl text-mGray opacity-30">designed by</span> <span class="text-xl text-mGray ml-2">Nextmark</span>
+      </div>
     </div>
   </div>
 </template>
