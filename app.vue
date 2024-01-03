@@ -363,7 +363,7 @@ onMounted(() => {
             </div>
           </div>
         </div>
-        <div class="h-full col-span-2">
+        <div class="xxl:h-full xl:h-full lg:h-full md:h-full slg:h-full h-[509px] col-span-2">
           <img class="h-[500px] w-full rounded-xl" src="/public/img/map.jpg"/>
         </div>
       </div>
