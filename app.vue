@@ -21,17 +21,17 @@ const cData = ref([
     text: t('carousel.text2'),    
   },
   {
-    img: '/img/c-img-2.png',
+    img: '/img/c-img-3.png',
     title: t('carousel.title3'),
     text: t('carousel.text3'),    
   },
   {
-    img: '/img/c-img-2.png',
+    img: '/img/c-img-4.jpg',
     title: t('carousel.title4'),
     text: t('carousel.text4'),  
   },
   {
-    img: '/img/c-img-2.png',
+    img: '/img/c-img-5.jpg',
     title: t('carousel.title5'),
     text: t('carousel.text5'),   
   }
@@ -106,9 +106,6 @@ function openCloseLang() {
   isLangOpen.value = !isLangOpen.value
 }
 </script>
-<!-- xxl:flex-row xl:flex-row lg:flex-row md:flex-row slg:flex-row flex-col -->
-<!-- xxl:w-1/2 xl:w-1/2 lg:w-1/2 md:w-1/2 slg:w-1/2 w-full -->
-<!-- xxl:px-0 xl:px-0 lg:px-0 px-6 -->
 <template>
   <div class="h-full flex flex-col scrollbarActive overflow-y-hidden relative">
     <div id="main" class="xxl:w-[1350px] xl:w-[1350px] lg:w-[1300px] mx-auto">
@@ -119,35 +116,27 @@ function openCloseLang() {
         </div>
         <div class="w-[70%] flex justify-end items-center">
           <ul class="xxl:flex xl:flex lg:flex hidden justify-between w-[60%]">
-            <li class="text-mGray text-lg hover:text-mRed underline-hover cursor-pointer"><a class="text-mGray hover:text-mRed text-lg rf-dewi-font" href="#main">{{$t('menu.main')}}</a></li>
-            <li class="text-mGray text-lg hover:text-mRed underline-hover cursor-pointer"><a class="text-mGray hover:text-mRed text-lg rf-dewi-font" href="#service">{{$t('menu.service')}}</a></li>
-            <li class="text-mGray text-lg hover:text-mRed underline-hover cursor-pointer"><a class="text-mGray hover:text-mRed text-lg rf-dewi-font" href="#advantages">{{$t('menu.advantages')}}</a></li>
-            <li class="text-mGray text-lg hover:text-mRed underline-hover cursor-pointer"><a class="text-mGray hover:text-mRed text-lg rf-dewi-font" href="#about">{{$t('menu.about')}}</a></li>
-            <li class="text-mGray text-lg hover:text-mRed underline-hover cursor-pointer"><a class="text-mGray hover:text-mRed text-lg rf-dewi-font" href="#contacts">{{$t('menu.contacts')}}</a></li>
+            <li class="hover:text-mRed underline-hover cursor-pointer"><a class="text-mGray hover:text-mRed font-normal text-base rf-dewi-font" href="#main">{{$t('menu.main')}}</a></li>
+            <li class="hover:text-mRed underline-hover cursor-pointer"><a class="text-mGray hover:text-mRed font-normal text-base rf-dewi-font" href="#service">{{$t('menu.service')}}</a></li>
+            <li class="hover:text-mRed underline-hover cursor-pointer"><a class="text-mGray hover:text-mRed font-normal text-base rf-dewi-font" href="#advantages">{{$t('menu.advantages')}}</a></li>
+            <li class="hover:text-mRed underline-hover cursor-pointer"><a class="text-mGray hover:text-mRed font-normal text-base rf-dewi-font" href="#about">{{$t('menu.about')}}</a></li>
+            <li class="hover:text-mRed underline-hover cursor-pointer"><a class="text-mGray hover:text-mRed font-normal text-base rf-dewi-font" href="#contacts">{{$t('menu.contacts')}}</a></li>
           </ul>
-          <div class="flex justify-end items-center w-[40%]">
-            <!-- <div class="text-xl font-light font-mono mr-4">
-              <select class="text-mGray hover:text-mRed border-none" v-model="locale">
-                <option class="border-none text-mGray hover:text-mRed" value="ru">{{$t('lang.ru')}}</option>
-                <option class="border-none text-mGray hover:text-mRed" value="en">{{$t('lang.en')}}</option>
-                <option class="border-none text-mGray hover:text-mRed" value="uz">{{$t('lang.uz')}}</option>
-              </select>
-            </div> -->
+          <div class="flex justify-end items-center w-[40%]">            
             <div class="text-xl font-light font-mono mr-4 flex items-center relative" @click="openCloseLang">
-              <span :class="isLangOpen ? 'text-mRed' : 'text-mGray'" class="capitalize font-light text-lg rf-dewi-font">{{$t(`lang.${locale}`)}}</span>
+              <span :class="isLangOpen ? 'text-mRed' : 'text-mGray'" class="capitalize font-light text-base rf-dewi-font">{{$t(`lang.${locale}`)}}</span>
               <arrow :class="isLangOpen ? '-rotate-90 stroke-mRed' : 'rotate-90 stroke-mGray'" class="w-5 h-5 ml-1"/>
               <div v-if="isLangOpen" class="absolute text-mWhite top-8">
-                <div @click="locale = 'ru'" class="border-none text-mGray hover:text-mRed mt-1 text-base cursor-pointer rf-dewi-font">{{$t('lang.ru')}}</div>
-                <div @click="locale = 'en'" class="border-none text-mGray hover:text-mRed mt-1 text-base cursor-pointer rf-dewi-font">{{$t('lang.en')}}</div>
-                <div @click="locale = 'uz'" class="border-none text-mGray hover:text-mRed mt-1 text-base cursor-pointer rf-dewi-font">{{$t('lang.uz')}}</div>
+                <div @click="locale = 'ru'" class="border-none text-mGray hover:text-mRed mt-1 font-normal text-base cursor-pointer rf-dewi-font">{{$t('lang.ru')}}</div>
+                <div @click="locale = 'en'" class="border-none text-mGray hover:text-mRed mt-1 font-normal text-base cursor-pointer rf-dewi-font">{{$t('lang.en')}}</div>
+                <div @click="locale = 'uz'" class="border-none text-mGray hover:text-mRed mt-1 font-normal text-base cursor-pointer rf-dewi-font">{{$t('lang.uz')}}</div>
               </div>
             </div>
-
-            <div class="xxl:flex xl:flex lg:flex hidden text-mWhite text-2xl justify-between group hover:text-mRed items-center">
+            <div class="xxl:flex xl:flex lg:flex hidden text-mWhite justify-between group hover:text-mRed items-center">
               <svg class="mr-4 stroke-mWhite group-hover:stroke-mRed" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M21.9999 16.92V19.92C22.0011 20.1985 21.944 20.4741 21.8324 20.7293C21.7209 20.9845 21.5572 21.2136 21.352 21.4018C21.1468 21.5901 20.9045 21.7335 20.6407 21.8227C20.3769 21.9119 20.0973 21.945 19.8199 21.92C16.7428 21.5856 13.7869 20.5341 11.1899 18.85C8.77376 17.3146 6.72527 15.2661 5.18993 12.85C3.49991 10.2412 2.44818 7.27097 2.11993 4.17997C2.09494 3.90344 2.12781 3.62474 2.21643 3.3616C2.30506 3.09846 2.4475 2.85666 2.6347 2.6516C2.82189 2.44653 3.04974 2.28268 3.30372 2.1705C3.55771 2.05831 3.83227 2.00024 4.10993 1.99997H7.10993C7.59524 1.9952 8.06572 2.16705 8.43369 2.48351C8.80166 2.79996 9.04201 3.23942 9.10993 3.71997C9.23656 4.68004 9.47138 5.6227 9.80993 6.52997C9.94448 6.8879 9.9736 7.27689 9.89384 7.65086C9.81408 8.02482 9.6288 8.36809 9.35993 8.63998L8.08993 9.90997C9.51349 12.4135 11.5864 14.4864 14.0899 15.91L15.3599 14.64C15.6318 14.3711 15.9751 14.1858 16.3491 14.1061C16.723 14.0263 17.112 14.0554 17.4699 14.19C18.3772 14.5285 19.3199 14.7634 20.2799 14.89C20.7657 14.9585 21.2093 15.2032 21.5265 15.5775C21.8436 15.9518 22.0121 16.4296 21.9999 16.92Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>               
-              <span>+998 90 123 45 67</span>
+              <span class="text-base font-normal manrope-font">+998 90 123 45 67</span>
             </div>
             <burger @click="openCloseSidebar" class="xxl:hidden xl:hidden flex"></burger>
           </div>
@@ -163,9 +152,9 @@ function openCloseLang() {
           </div>
         </div>
         <div class="flex justify-center items-center pt-6 xxl:w-1/2 xl:w-1/2 lg:w-1/2 md:w-1/2 slg:w-1/2 w-full xxl:px-0 xl:px-0 lg:px-0 md:px-0 px-6">
-          <div class="text-2Gray xxl:w-4/5 xl:w-4/5 lg:w-4/5 md:w-4/5 slg:w-4/5 w-full flex justify-end text-lg font-normal leading-6 manrope-font">{{$t('header.text')}}</div>
+          <div class="text-2Gray xxl:w-4/5 xl:w-4/5 lg:w-4/5 md:w-4/5 slg:w-4/5 w-full flex justify-end text-sm xxl:text-base xl:text-base lg:text-base md:text-base slg:text-base font-normal leading-6 manrope-font">{{$t('header.text')}}</div>
         </div>
-        <div class="xxl:h-[152px] xl:h-[152px] lg:h-[152px] md:h-[152px] slg:h-[152px] h-[112px] xxl:w-[152px] xl:w-[152px] lg:w-[152px] md:w-[152px] slg:w-[152px] w-[112px]  rounded-full bg-mRed absolute top-[80%] right-[50px] flex justify-center items-center text-mWhite text-base font-normal tracking-wider manrope-font">{{$t('header.circle')}}</div>
+        <div class="xxl:h-[152px] xl:h-[152px] lg:h-[152px] md:h-[152px] slg:h-[152px] h-[112px] xxl:w-[152px] xl:w-[152px] lg:w-[152px] md:w-[152px] slg:w-[152px] w-[112px]  rounded-full bg-mRed absolute top-[80%] right-[50px] flex justify-center items-center text-mWhite font-normal tracking-wider manrope-font text-xs xxl:text-base xl:text-base lg:text-base md:text-base slg:text-base">{{$t('header.circle')}}</div>
       </div>
       <!-- Under Navbar End -->
     </div>
@@ -178,13 +167,13 @@ function openCloseLang() {
     <div id="service" class="xxl:w-[1350px] xl:w-[1350px] lg:w-[1300px] w-full mx-auto mt-24">
       <!-- Header Start -->
       <div class="w-full flex xxl:flex-row xl:flex-row lg:flex-row md:flex-row slg:flex-row flex-col justify-between">
-        <div class="flex flex-col xxl:w-1/2 xl:w-1/2 lg:w-1/2 md:w-1/2 slg:w-1/2 w-full xxl:px-0 xl:px-0 lg:px-0 md:px-0 px-6">
-          <span class="text-mWhite text-[40px] font-semibold tracking-wider rf-dewi-font">{{$t('carousel.title_1')}} </span> 
-          <div class="text-mWhite text-[40px] font-semibold tracking-wider rf-dewi-font">{{$t('carousel.title_2')}} <span class="text-mRed text-[40px] font-semibold tracking-wider rf-dewi-font">{{$t('carousel.title_3')}}</span>
+        <div class="flex flex-col text-[24px] xxl:text-[40px] xl:text-[40px] lg:text-[40px] md:text-[40px] slg:text-[40px] xxl:w-1/2 xl:w-1/2 lg:w-1/2 md:w-1/2 slg:w-1/2 w-full xxl:px-0 xl:px-0 lg:px-0 md:px-0 px-6">
+          <span class="text-mWhite font-semibold tracking-wider rf-dewi-font">{{$t('carousel.title_1')}} </span> 
+          <div class="text-mWhite font-semibold tracking-wider rf-dewi-font">{{$t('carousel.title_2')}} <span class="text-mRed font-semibold tracking-wider rf-dewi-font">{{$t('carousel.title_3')}}</span>
           </div>
         </div>
         <div class="flex justify-end items-center xxl:w-1/2 xl:w-1/2 lg:w-1/2 md:w-1/2 slg:w-1/2 w-full xxl:px-0 xl:px-0 lg:px-0 md:px-0 px-6 text-2Gray">
-          <div class="xxl:w-[60%] xl:w-[60%] lg:w-[60%] md:w-[60%] slg:w-[60%] w-full text-base font-normal xxl:ml-14 xl:ml-14 lg:ml-14 ml-0 xxl:mt-0 xl:mt-0 lg:mt-0 mt-4 manrope-font">{{$t('carousel.text')}}</div>
+          <div class="xxl:w-[60%] xl:w-[60%] lg:w-[60%] md:w-[60%] slg:w-[60%] w-full text-sm xxl:text-base xl:text-base lg:text-base md:text-base slg:text-base font-normal xxl:ml-14 xl:ml-14 lg:ml-14 ml-0 xxl:mt-0 xl:mt-0 lg:mt-0 mt-4 manrope-font">{{$t('carousel.text')}}</div>
         </div>  
       </div>
       <!-- Header End -->
@@ -262,15 +251,15 @@ function openCloseLang() {
     <!-- Carausel End -->
     <!-- Result Start -->
     <div id="advantages" class="xxl:w-[1350px] xl:w-[1350px] lg:w-[1300px] w-full mx-auto mt-[100px]">
-      <div class="xxl:w-[70%] xl:w-[70%] lg:w-[70%] md:w-[70%] slg:w-[70%] w-full mx-auto flex flex-col items-center xxl:-mt-[20px] xl:-mt-[20px] lg:-mt-[20px] md:-mt-[20px] slg:-mt-[20px] mt-[132px]">
+      <div class="xxl:w-[70%] xl:w-[70%] lg:w-[70%] md:w-[70%] slg:w-[70%] w-full mx-auto flex flex-col items-center xxl:-mt-[20px] xl:-mt-[20px] lg:-mt-[20px] md:-mt-[20px] slg:-mt-[20px] mt-[132px] font-bold ">
         <div class="flex justify-end items-center w-full">
-          <div class="xxl:w-[65%] xl:w-[65%] lg:w-[65%] md:w-[65%] slg:w-[65%] w-full flex xxl:justify-end xl:justify-end lg:justify-end md:justify-end slg:justify-end justify-center mx-auto">
-            <span class="text-mWhite xxl:text-[36px] xl:text-[36px] lg:text-[36px] md:text-[36px] slg:text-[36px] text-[24px] tracking-wider rf-dewi-font">{{$t('underCarousel.title_1_1')}} </span> <span class="text-mRed xxl:text-[36px] xl:text-[36px] lg:text-[36px] md:text-[36px] slg:text-[36px] text-[24px] tracking-wider ml-4 rf-dewi-font"> {{$t('underCarousel.title_1_2')}}</span>
+          <div class="xxl:w-[75%] xl:w-[75%] lg:w-[75%] md:w-[75%] slg:w-[75%] w-full flex xxl:justify-end xl:justify-end lg:justify-end md:justify-end slg:justify-end justify-center mx-auto">
+            <span class="text-mWhite xxl:text-[40px] xl:text-[40px] lg:text-[40px] md:text-[40px] slg:text-[40px] text-[24px] tracking-wider rf-dewi-font">{{$t('underCarousel.title_1_1')}} </span> <span class="text-mRed xxl:text-[40px] xl:text-[40px] lg:text-[40px] md:text-[40px] slg:text-[40px] text-[24px] tracking-wider ml-4 rf-dewi-font"> {{$t('underCarousel.title_1_2')}}</span>
           </div>
         </div>
         <div class="flex justify-start items-center w-full">
-          <div class="xxl:w-[65%] xl:w-[65%] lg:w-[65%] md:w-[65%] slg:w-[65%] w-full flex xxl:justify-end xl:justify-end lg:justify-end md:justify-end slg:justify-end justify-center mx-auto">
-            <span class="text-mWhite xxl:text-[36px] xl:text-[36px] lg:text-[36px] md:text-[36px] slg:text-[36px] text-[24px] tracking-wider rf-dewi-font">{{$t('underCarousel.title_2_1')}} </span> <span class="text-mRed xxl:text-[36px] xl:text-[36px] lg:text-[36px] md:text-[36px] slg:text-[36px] text-[24px] tracking-wider ml-4 rf-dewi-font"> {{$t('underCarousel.title_2_2')}}</span>
+          <div class="xxl:w-[75%] xl:w-[75%] lg:w-[75%] md:w-[75%] slg:w-[75%] w-full flex xxl:justify-start xl:justify-start lg:justify-start md:justify-start slg:justify-start justify-center mx-auto">
+            <span class="text-mWhite xxl:text-[40px] xl:text-[40px] lg:text-[40px] md:text-[40px] slg:text-[40px] text-[24px] tracking-wider rf-dewi-font">{{$t('underCarousel.title_2_1')}} </span> <span class="text-mRed xxl:text-[40px] xl:text-[40px] lg:text-[40px] md:text-[40px] slg:text-[40px] text-[24px] tracking-wider ml-4 rf-dewi-font"> {{$t('underCarousel.title_2_2')}}</span>
           </div>
         </div>
       </div>
@@ -326,20 +315,20 @@ function openCloseLang() {
       </div>
       <div class="xxl:w-1/2 xl:w-1/2 lg:w-1/2 md:w-1/2 slg:w-1/2 w-full grid xxl:grid-cols-2 xl:grid-cols-2 lg:grid-cols-2 slg:grid-cols-2 grid-cols-1 gap-6 xxl:pl-10 xl:pl-10 lg:pl-10 md:pl-10 pl-0 xxl:mt-0 xl:mt-0 lg:mt-0 md:mt-0 mt-2">
         <div class="border border-2Gray bg-2Black rounded-2xl flex flex-col justify-between items-start p-8 text-mWhite xxl:h-[320px] xl:h-[320px] lg:h-[320px] md:h-[320px] slg:h-[320px] h-[338px]">
-          <div class="text-[48px] font-bold rf-dewi-font">{{count1}}</div>
-          <div class="tracking-wider manrope-font">{{$t('associate.card1')}}</div>
+          <div class="font-bold text-5xl rf-dewi-font">{{count1}}</div>
+          <div class="tracking-wider text-base manrope-font">{{$t('associate.card1')}}</div>
         </div>
         <div class="border border-2Gray bg-2Black rounded-2xl flex flex-col justify-between items-start p-8 text-mWhite xxl:h-[320px] xl:h-[320px] lg:h-[320px] md:h-[320px] slg:h-[320px] h-[338px]">
-          <div class="text-[48px] font-bold rf-dewi-font">{{count2}}</div>
-          <div class="tracking-wider manrope-font">{{$t('associate.card2')}}</div>
+          <div class="font-bold text-5xl rf-dewi-font">{{count2}}</div>
+          <div class="tracking-wider text-base manrope-font">{{$t('associate.card2')}}</div>
         </div>
         <div class="border border-2Gray bg-2Black rounded-2xl flex flex-col justify-between items-start p-8 text-mWhite xxl:h-[320px] xl:h-[320px] lg:h-[320px] md:h-[320px] slg:h-[320px] h-[338px]">
-          <div class="text-[48px] font-bold rf-dewi-font">{{count3}}</div>
-          <div class="tracking-wider manrope-font">{{$t('associate.card3')}}</div>
+          <div class="font-bold text-5xl rf-dewi-font">{{count3}}</div>
+          <div class="tracking-wider text-base manrope-font">{{$t('associate.card3')}}</div>
         </div>
         <div class="border border-2Gray bg-2Black rounded-2xl flex flex-col justify-between items-start p-8 text-mWhite xxl:h-[320px] xl:h-[320px] lg:h-[320px] md:h-[320px] slg:h-[320px] h-[338px]">
-          <div class="text-[48px] font-bold rf-dewi-font">{{count4}}+</div>
-          <div class="tracking-wider manrope-font">{{$t('associate.card4')}}</div>
+          <div class="font-bold text-5xl rf-dewi-font">{{count4}}+</div>
+          <div class="tracking-wider text-base manrope-font">{{$t('associate.card4')}}</div>
         </div>
       </div>
     </div>
@@ -354,15 +343,15 @@ function openCloseLang() {
       </div>
       <div class="w-full xxl:h-[500px] xl:h-[500px] lg:h-[500px] md:h-[500px] slg:h-[500px] h-[1050px] xxl:grid xl:grid lg:grid md:grid slg:grid flex flex-col grid-cols-3 gap-6 mt-14 py-8">
         <div class="border border-2Gray col-span-1 py-[72px] xxl:px-[64px] xl:px-[64px] lg:px-[64px] md:px-[64px] slg:px-[64px] px-[40px] bg-3Black rounded-xl">
-          <h2 class="text-4xl text-mWhite rf-dewi-font">{{$t('contact.contacts')}}</h2>
+          <h2 class="text-4xl text-mWhite rf-dewi-font text-[20px] xxl:text-[32px] xl:text-[32px] lg:text-[32px] md:text-[32px] slg:text-[32px] font-semibold">{{$t('contact.contacts')}}</h2>
           <div class="flex justify-start text-mWhite mt-8" >
             <svg class="mt-1" width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="#D11011" stroke-linecap="round" stroke-linejoin="round"/>
               <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="#D11011" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
             <div class="flex flex-col ml-4">
-              <span class="text-[20px] font-semibold manrope-font">{{$t('contact.address')}}</span>
-              <div class="w-4/5 text-sm font-normal mt-2 manrope-font">{{$t('contact.address_map')}}</div>
+              <span class="font-semibold manrope-font text-[18px] xxl:text-[20px] xl:text-[20px] lg:text-[20px] md:text-[20px] slg:text-[20px]">{{$t('contact.address')}}</span>
+              <div class="font-normal mt-2 manrope-font text-sm xxl:text-base xl:text-base lg:text-base md:text-base slg:text-base">{{$t('contact.address_map')}}</div>
             </div>
           </div>
           <div class="flex justify-start text-mWhite mt-8" >
@@ -370,8 +359,8 @@ function openCloseLang() {
               <path d="M21.9999 16.9201V19.9201C22.0011 20.1986 21.944 20.4743 21.8324 20.7294C21.7209 20.9846 21.5572 21.2137 21.352 21.402C21.1468 21.5902 20.9045 21.7336 20.6407 21.8228C20.3769 21.912 20.0973 21.9452 19.8199 21.9201C16.7428 21.5857 13.7869 20.5342 11.1899 18.8501C8.77376 17.3148 6.72527 15.2663 5.18993 12.8501C3.49991 10.2413 2.44818 7.27109 2.11993 4.1801C2.09494 3.90356 2.12781 3.62486 2.21643 3.36172C2.30506 3.09859 2.4475 2.85679 2.6347 2.65172C2.82189 2.44665 3.04974 2.28281 3.30372 2.17062C3.55771 2.05843 3.83227 2.00036 4.10993 2.0001H7.10993C7.59524 1.99532 8.06572 2.16718 8.43369 2.48363C8.80166 2.80008 9.04201 3.23954 9.10993 3.7201C9.23656 4.68016 9.47138 5.62282 9.80993 6.5301C9.94448 6.88802 9.9736 7.27701 9.89384 7.65098C9.81408 8.02494 9.6288 8.36821 9.35993 8.6401L8.08993 9.9101C9.51349 12.4136 11.5864 14.4865 14.0899 15.9101L15.3599 14.6401C15.6318 14.3712 15.9751 14.1859 16.3491 14.1062C16.723 14.0264 17.112 14.0556 17.4699 14.1901C18.3772 14.5286 19.3199 14.7635 20.2799 14.8901C20.7657 14.9586 21.2093 15.2033 21.5265 15.5776C21.8436 15.9519 22.0121 16.4297 21.9999 16.9201Z" stroke="#D11011" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>              
             <div class="flex flex-col ml-4">
-              <span class="text-[20px] font-semibold manrope-font">{{$t('contact.telefon')}}</span>
-              <span class="text-sm font-normal mt-2 manrope-font">+998 (90) 123 45 67</span>
+              <span class="font-semibold manrope-font text-[18px] xxl:text-[20px] xl:text-[20px] lg:text-[20px] md:text-[20px] slg:text-[20px]">{{$t('contact.telefon')}}</span>
+              <span class="font-normal mt-2 manrope-font text-sm xxl:text-base xl:text-base lg:text-base md:text-base slg:text-base">+998 (90) 123 45 67</span>
             </div>
           </div>
           <div class="flex justify-start text-mWhite mt-8" >
@@ -380,8 +369,8 @@ function openCloseLang() {
               <path d="M22 6.00098L12 13.001L2 6.00098" stroke="#D11011" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>                         
             <div class="flex flex-col ml-4">
-              <span class="text-[20px] font-semibold manrope-font">{{$t('contact.email')}}</span>
-              <span class="text-sm font-normal mt-2 manrope-font">info@ravoworld.com</span>
+              <span class="font-semibold manrope-font text-[18px] xxl:text-[20px] xl:text-[20px] lg:text-[20px] md:text-[20px] slg:text-[20px]">{{$t('contact.email')}}</span>
+              <span class="font-normal mt-2 manrope-font text-sm xxl:text-base xl:text-base lg:text-base md:text-base slg:text-base">info@ravoworld.com</span>
             </div>
           </div>
         </div>
@@ -399,11 +388,11 @@ function openCloseLang() {
         </div>
         <div class="xxl:w-[70%] xl:w-[70%] lg:w-[70%] md:w-[70%] slg:w-[70%] w-full flex justify-end items-center">
           <ul class="flex justify-between xxl:w-[70%] xl:w-[70%] lg:w-[70%] md:w-[70%] slg:w-[70%] w-full xxl:flex-row xl:flex-row lg:flex-row md:flex-row slg:flex-row flex-col items-center">
-            <li class="text-mGray text-lg hover:text-mRed underline-hover cursor-pointer xxl:mt-0 xl:mt-0 lg:mt-0 md:mt-0 slg:mt-0 mt-4"><a class="text-mGray hover:text-mRed text-lg manrope-font" href="#main">{{$t('menu.main')}}</a></li>
-            <li class="text-mGray text-lg hover:text-mRed underline-hover cursor-pointer xxl:mt-0 xl:mt-0 lg:mt-0 md:mt-0 slg:mt-0 mt-4"><a class="text-mGray hover:text-mRed text-lg manrope-font" href="#service">{{$t('menu.service')}}</a></li>
-            <li class="text-mGray text-lg hover:text-mRed underline-hover cursor-pointer xxl:mt-0 xl:mt-0 lg:mt-0 md:mt-0 slg:mt-0 mt-4"><a class="text-mGray hover:text-mRed text-lg manrope-font" href="#advantages">{{$t('menu.advantages')}}</a></li>
-            <li class="text-mGray text-lg hover:text-mRed underline-hover cursor-pointer xxl:mt-0 xl:mt-0 lg:mt-0 md:mt-0 slg:mt-0 mt-4"><a class="text-mGray hover:text-mRed text-lg manrope-font" href="#about">{{$t('menu.about')}}</a></li>
-            <li class="text-mGray text-lg hover:text-mRed underline-hover cursor-pointer xxl:mt-0 xl:mt-0 lg:mt-0 md:mt-0 slg:mt-0 mt-4"><a class="text-mGray hover:text-mRed text-lg manrope-font" href="#contacts">{{$t('menu.contacts')}}</a></li>
+            <li class="hover:text-mRed underline-hover cursor-pointer xxl:mt-0 xl:mt-0 lg:mt-0 md:mt-0 slg:mt-0 mt-4"><a class="text-mGray hover:text-mRed text-base manrope-font" href="#main">{{$t('menu.main')}}</a></li>
+            <li class="hover:text-mRed underline-hover cursor-pointer xxl:mt-0 xl:mt-0 lg:mt-0 md:mt-0 slg:mt-0 mt-4"><a class="text-mGray hover:text-mRed text-base manrope-font" href="#service">{{$t('menu.service')}}</a></li>
+            <li class="hover:text-mRed underline-hover cursor-pointer xxl:mt-0 xl:mt-0 lg:mt-0 md:mt-0 slg:mt-0 mt-4"><a class="text-mGray hover:text-mRed text-base manrope-font" href="#advantages">{{$t('menu.advantages')}}</a></li>
+            <li class="hover:text-mRed underline-hover cursor-pointer xxl:mt-0 xl:mt-0 lg:mt-0 md:mt-0 slg:mt-0 mt-4"><a class="text-mGray hover:text-mRed text-base manrope-font" href="#about">{{$t('menu.about')}}</a></li>
+            <li class="hover:text-mRed underline-hover cursor-pointer xxl:mt-0 xl:mt-0 lg:mt-0 md:mt-0 slg:mt-0 mt-4"><a class="text-mGray hover:text-mRed text-base manrope-font" href="#contacts">{{$t('menu.contacts')}}</a></li>
           </ul>
         </div>
       </div>
@@ -442,8 +431,8 @@ function openCloseLang() {
 /* Import the RF Dewi font family */
 @font-face {
   font-family: 'RF Dewi';
-  src: url('~static/fonts/RFDewi-Bold.woff2') format('woff2'),
-       url('~static/fonts/RFDewi-Bold.woff') format('woff');
+  src: url('~static/fonts/RFDewiExpanded-Black.woff2') format('woff2'),
+       url('~static/fonts/RFDewiExpanded-Black.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
