@@ -145,7 +145,7 @@ function openCloseLang() {
         <div class="flex justify-center items-center pt-6 xxl:w-1/2 xl:w-1/2 lg:w-1/2 md:w-1/2 slg:w-1/2 w-full xxl:px-0 xl:px-0 lg:px-0 md:px-0 px-6">
           <div class="text-2Gray xxl:w-4/5 xl:w-4/5 lg:w-4/5 md:w-4/5 slg:w-4/5 w-full flex justify-end text-sm xxl:text-base xl:text-base lg:text-base md:text-base slg:text-base font-normal leading-6 manrope-font">{{$t('header.text')}}</div>
         </div>
-        <div class="xxl:h-[152px] xl:h-[152px] lg:h-[152px] md:h-[152px] slg:h-[152px] h-[112px] xxl:w-[152px] xl:w-[152px] lg:w-[152px] md:w-[152px] slg:w-[152px] w-[112px]  rounded-full bg-mRed absolute top-[80%] right-[50px] flex justify-center items-center text-mWhite font-normal tracking-wider manrope-font text-xs xxl:text-base xl:text-base lg:text-base md:text-base slg:text-base">{{$t('header.circle')}}</div>
+        <div class="xxl:h-[152px] xl:h-[152px] lg:h-[152px] md:h-[152px] slg:h-[152px] h-[112px] xxl:w-[152px] xl:w-[152px] lg:w-[152px] md:w-[152px] slg:w-[152px] w-[112px]  rounded-full bg-mRed absolute top-[80%] right-[50px] flex justify-center items-center text-mWhite font-normal tracking-wider manrope-font text-xs xxl:text-base xl:text-base lg:text-base md:text-base slg:text-base"><a href="#contacts" class="">{{$t('header.circle')}}</a></div>
       </div>
       <!-- Under Navbar End -->
     </div>
@@ -155,7 +155,7 @@ function openCloseLang() {
     </div>
     <!-- Banner Image -->
     <!-- Carausel Start -->
-    <div id="service" class="xxl:w-[1350px] xl:w-[1350px] lg:w-[1300px] w-full mx-auto mt-24">
+    <div id="service" class="xxl:w-[1350px] xl:w-[1350px] lg:w-[1300px] w-full mx-auto mt-[134px]">
       <!-- Header Start -->
       <div class="w-full flex xxl:flex-row xl:flex-row lg:flex-row md:flex-row slg:flex-row flex-col justify-between">
         <div class="flex flex-col text-[24px] xxl:text-[40px] xl:text-[40px] lg:text-[40px] md:text-[40px] slg:text-[40px] xxl:w-1/2 xl:w-1/2 lg:w-1/2 md:w-1/2 slg:w-1/2 w-full xxl:px-0 xl:px-0 lg:px-0 md:px-0 px-6">
@@ -169,23 +169,23 @@ function openCloseLang() {
       </div>
       <!-- Header End -->
       <!-- Body Start -->      
-      <div class="slider-container w-full xxl:h-[553px] xl:h-[553px] lg:h-[553px] md:h-[553px] slg:h-[553px] h-[650px] relative mt-[103px]">
+      <div class="slider-container w-full xxl:h-[553px] xl:h-[553px] lg:h-[553px] md:h-[553px] slg:h-[553px] h-[650px] relative xxl:mt-[103px] xl:mt-[103px] lg:mt-[103px] md:mt-[103px] mt-[34px]">
         <div class="slider w-full xxl:h-[553px] xl:h-[553px] lg:h-[553px] md:h-[553px] slg:h-[553px] h-[650px] xxl:flex xl:flex lg:flex md:flex slg:flex" :style="{ transform: `translateX(-${currentItem * 100}%)` }">
-          <div v-for="(item, index) in cData" :key="index" class="slider-item h-full w-[80%] relative">
-            <div class="w-[80%] flex box-border h-full">
-              <div class="w-[50%] flex justify-start">
-                <div class="mt-[114px] w-4/5">
+          <div v-for="(item, index) in cData" :key="index" class="slider-item h-full w-full relative">
+            <div class="w-full xxl:flex-row xl:flex-row lg:flex-row md:flex-row slg:flex-row flex flex-col-reverse box-border h-full xxl:px-0 xl:px-0 lg:px-0 md:px-0 px-6">
+              <div class="xxl:w-[50%] xl:w-[50%] lg:w-[50%] md:w-[50%] slg:w-[50%] w-full flex justify-start xxl:mt-[114px] xl:mt-[114px] lg:mt-[114px] md:mt-[114px] mt-[32px]">
+                <div class="xxl:w-4/5 xl:w-4/5 lg:w-4/5 md:w-4/5 slg:w-4/5 w-full">
                   <h2 class="text-mWhite xxl:text-[24px] xl:text-[24px] lg:text-[24px] md:text-[24px] slg:text-[24px] text-[20px] manrope-font xxl:font-semibold xl:font-semibold lg:font-semibold md:font-semibold slg:font-semibold font-bold">{{ item.title }}</h2>
                   <p class="text-mGray xxl:text-[16px] xl:text-[16px] lg:text-[16px] md:text-[16px] slg:text-[16px] text-[14px] manrope-font font-normal xxl:mt-8 xl:mt-8 lg:mt-8 md:mt-8 slg:mt-8 mt-4">{{ item.text }}</p>
                 </div>             
               </div>
-              <div class="image-container h-full w-[50%]">
-                <img :src="item.img" alt="item.image" class="slider-image h-full w-full" />
+              <div class="xxl:w-[50%] xl:w-[50%] lg:w-[50%] md:w-[50%] slg:w-[50%] w-full xxl:h-full xl:h-full lg:h-full md:h-full slg:h-full h-[347px]">
+                <img :src="item.img" alt="item.image" class="rounded-3xl h-full w-full" />
               </div>
             </div>
           </div>
         </div>
-        <div class="slider-controls left-0 bottom-[84px] absolute flex justify-between items-center">
+        <div class="xxl:flex xl:flex lg:flex md:flex slg:flex hidden bottom-[84px] absolute justify-between items-center">
           <div @click="prev" class="w-14 h-14 rounded-full flex justify-center items-center group border border-mRed hover:bg-mRed rotate-180 opacity-60 hover:opacity-100">
             <svg class="stroke-mRed group-hover:stroke-mWhite" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M9 18L15 12L9 6" stroke-linecap="round" stroke-linejoin="round"/>
@@ -193,7 +193,7 @@ function openCloseLang() {
           </div>
           <div class="ml-4">
             <span class="text-mWhite xxl:text-[24px] xl:text-[24px] lg:text-[24px] md:text-[24px] slg:text-[24px] text-[16px] manrope-font">{{ currentItem + 1 }} /</span>
-            <span class="text-mGray xxl:text-[16px] xl:text-[16px] lg:text-[16px] md:text-[16px] slg:text-[16px] text-[14px] manrope-font">{{ cData.length }}</span>
+            <span class="text-mGray xxl:text-[16px] xl:text-[16px] lg:text-[16px] md:text-[16px] slg:text-[16px] text-[14px] manrope-font ml-1">{{ cData.length }}</span>
           </div>
           <div @click="next" class=" w-14 h-14 rounded-full flex justify-center items-center group border border-mRed hover:bg-mRed ml-4">
             <svg class="stroke-mRed group-hover:stroke-mWhite" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -202,12 +202,28 @@ function openCloseLang() {
           </div>
         </div>
       </div>
+      <div class="xxl:hidden xl:hidden lg:hidden md:hidden slg:hidden flex justify-between items-center w-1/2 mx-auto mt-12">
+        <div @click="prev" class="w-14 h-14 rounded-full flex justify-center items-center group border border-mRed hover:bg-mRed rotate-180 opacity-60 hover:opacity-100">
+          <svg class="stroke-mRed group-hover:stroke-mWhite" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 18L15 12L9 6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="ml-4">
+          <span class="text-mWhite xxl:text-[24px] xl:text-[24px] lg:text-[24px] md:text-[24px] slg:text-[24px] text-[16px] manrope-font">{{ currentItem + 1 }} /</span>
+          <span class="text-mGray xxl:text-[16px] xl:text-[16px] lg:text-[16px] md:text-[16px] slg:text-[16px] text-[14px] manrope-font">{{ cData.length }}</span>
+        </div>
+        <div @click="next" class=" w-14 h-14 rounded-full flex justify-center items-center group border border-mRed hover:bg-mRed ml-4">
+          <svg class="stroke-mRed group-hover:stroke-mWhite" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 18L15 12L9 6"  stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
       <!-- Body End -->
     </div>
     <!-- Carausel End -->
     <!-- Result Start -->
-    <div id="advantages" class="xxl:w-[1350px] xl:w-[1350px] lg:w-[1300px] w-full mx-auto mt-[100px]">
-      <div class="xxl:w-[70%] xl:w-[70%] lg:w-[70%] md:w-[70%] slg:w-[70%] w-full mx-auto flex flex-col items-center xxl:-mt-[20px] xl:-mt-[20px] lg:-mt-[20px] md:-mt-[20px] slg:-mt-[20px] mt-[132px] font-bold ">
+    <div id="advantages" class="xxl:w-[1350px] xl:w-[1350px] lg:w-[1300px] w-full mx-auto xxl:mt-[184px] xl:mt-[184px] lg:mt-[184px] md:mt-[184px] mt-[120px]">
+      <div class="xxl:w-[70%] xl:w-[70%] lg:w-[70%] md:w-[70%] slg:w-[70%] w-full mx-auto flex flex-col items-center  font-bold ">
         <div class="flex justify-end items-center w-full">
           <div class="xxl:w-[75%] xl:w-[75%] lg:w-[75%] md:w-[75%] slg:w-[75%] w-full flex xxl:justify-end xl:justify-end lg:justify-end md:justify-end slg:justify-end justify-center mx-auto">
             <span class="text-mWhite xxl:text-[40px] xl:text-[40px] lg:text-[40px] md:text-[40px] slg:text-[40px] text-[24px] tracking-wider rf-dewi-font">{{$t('underCarousel.title_1_1')}} </span> <span class="text-mRed xxl:text-[40px] xl:text-[40px] lg:text-[40px] md:text-[40px] slg:text-[40px] text-[24px] tracking-wider ml-4 rf-dewi-font"> {{$t('underCarousel.title_1_2')}}</span>
@@ -219,7 +235,7 @@ function openCloseLang() {
           </div>
         </div>
       </div>
-      <div class="w-full xxl:grid xl:grid lg:grid md:grid slg:grid flex flex-col grid-cols-3 gap-6 mt-20 xxl:px-0 xl:px-0 lg:px-0 md:px-0 px-6">
+      <div class="w-full xxl:grid xl:grid lg:grid md:grid slg:grid flex flex-col grid-cols-3 gap-6 xxl:mt-[88px] xl:mt-[88px] lg:mt-[88px] md:mt-[88px] mt-12 xxl:px-0 xl:px-0 lg:px-0 md:px-0 px-6">
         <div class="border border-2Gray h-[300px] rounded-2xl xxl:px-12 xl:px-12 lg:px-12 md:px-12 slg:px-12 p-8 xxl:py-10 xl:py-10 lg:py-10 md:py-10 slg:py-10 flex flex-col justify-between">
           <div>
             <handGlobe/>            
@@ -254,7 +270,7 @@ function openCloseLang() {
     </div>
     <!-- Result End --> 
     <!-- Counts Start -->
-    <div id="about" class="xxl:w-[1350px] xl:w-[1350px] lg:w-[1300px] w-full xxl:h-[700px] xl:h-[700px] lg:h-[700px] md:h-[700px] slg:h-[700px] h-[1650px] mx-auto xxl:mt-[198px] xl:mt-[198px] lg:mt-[198px] md:mt-[198px] mt-[120px] flex xxl:flex-row xl:flex-row lg:flex-row md:flex-row slg:flex-row flex-col justify-between xxl:px-0 xl:px-0 lg:px-0 px-6">
+    <div id="about" class="xxl:w-[1350px] xl:w-[1350px] lg:w-[1300px] w-full xxl:h-[700px] xl:h-[700px] lg:h-[700px] md:h-[700px] slg:h-[700px] h-[1650px] mx-auto xxl:mt-[184px] xl:mt-[184px] lg:mt-[184px] md:mt-[184px] mt-[120px] flex xxl:flex-row xl:flex-row lg:flex-row md:flex-row slg:flex-row flex-col justify-between xxl:px-0 xl:px-0 lg:px-0 px-6">
       <div class="xxl:w-1/2 xl:w-1/2 lg:w-1/2 md:w-1/2 slg:w-1/2 w-full flex flex-col justify-between">
         <div class="text-mWhite flex flex-col tracking-wider font-semibold xxl:text-[40px] xl:text-[40px] lg:text-[40px] text-[24px] w-full xxl:pr-8 xl:pr-8 md:pr-8 lg:pr-8 p-0 rf-dewi-font">
           <div>
@@ -290,7 +306,7 @@ function openCloseLang() {
     </div>
     <!-- Counts End -->
     <!-- Contact Start -->
-    <div id="contacts" class="xxl:w-[1350px] xl:w-[1350px] lg:w-[1300px] w-full xxl:px-0 xl:px-0 lg:px-0 px-6 h-auto mx-auto mt-24 flex flex-col">
+    <div id="contacts" class="xxl:w-[1350px] xl:w-[1350px] lg:w-[1300px] w-full xxl:mt-[184px] xl:mt-[184px] lg:mt-[184px] md:mt-[184px] mt-[120px] xxl:px-0 xl:px-0 lg:px-0 px-6 h-auto mx-auto flex flex-col">
       <div class="w-full xxl:mt-14 xl:mt-14 lg:mt-14 mt-24">
         <div class="text-mWhite xxl:text-[40px] xl:text-[40px] lg:text-[40px] text-[24px] font-medium flex flex-col tracking-wider rf-dewi-font">
           <span>{{$t('contact.title')}}</span> 
@@ -477,12 +493,6 @@ body {
   border-radius: 24px;
 }
 
-.slider-controls {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 20px;
-}
 
 .slider-arrow {
   cursor: pointer;
