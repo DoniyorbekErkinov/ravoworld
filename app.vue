@@ -101,7 +101,7 @@ function openCloseLang() {
   <div class="h-full flex flex-col scrollbarActive overflow-y-hidden relative">
     <div id="main" class="xxl:w-[1350px] xl:w-[1350px] lg:w-[1300px] mx-auto">
       <!-- Navbar Start -->
-      <div class="w-full py-8 xxl:px-0 xl:px-0 lg:px-0 md:px-0 px-6 flex justify-between items-center">
+      <div class="w-full py-8 xxl:px-0 xl:px-0 lg:px-0 md:px-0 slg:px-0 px-6 flex justify-between items-center">
         <div class="w-[30%] flex items-center">
           <logo class="xxl:ml-0 xl:ml-0 lg:ml-0 md:ml-0 ml-2 scale-125 xxl:scale-100 xl:scale-100 lg:scale-100 md:scale-100"/>            
         </div>
@@ -158,12 +158,12 @@ function openCloseLang() {
     <div id="service" class="xxl:w-[1350px] xl:w-[1350px] lg:w-[1300px] w-full mx-auto mt-[134px]">
       <!-- Header Start -->
       <div class="w-full flex xxl:flex-row xl:flex-row lg:flex-row md:flex-row slg:flex-row flex-col justify-between">
-        <div class="flex flex-col text-[24px] xxl:text-[40px] xl:text-[40px] lg:text-[40px] md:text-[40px] slg:text-[40px] xxl:w-1/2 xl:w-1/2 lg:w-1/2 md:w-1/2 slg:w-1/2 w-full xxl:px-0 xl:px-0 lg:px-0 md:px-0 px-6">
+        <div class="flex flex-col text-[24px] xxl:text-[40px] xl:text-[40px] lg:text-[40px] md:text-[40px] slg:text-[40px] xxl:w-1/2 xl:w-1/2 lg:w-1/2 md:w-1/2 slg:w-1/2 w-full xxl:px-0 xl:px-0 lg:px-0 md:px-0 slg:px-0 px-6">
           <span class="text-mWhite font-semibold tracking-wider rf-dewi-font">{{$t('carousel.title_1')}} </span> 
           <div class="text-mWhite font-semibold tracking-wider rf-dewi-font">{{$t('carousel.title_2')}} <span class="text-mRed font-semibold tracking-wider rf-dewi-font">{{$t('carousel.title_3')}}</span>
           </div>
         </div>
-        <div class="flex justify-end items-center xxl:w-1/2 xl:w-1/2 lg:w-1/2 md:w-1/2 slg:w-1/2 w-full xxl:px-0 xl:px-0 lg:px-0 md:px-0 px-6 text-2Gray">
+        <div class="flex justify-end items-center xxl:w-1/2 xl:w-1/2 lg:w-1/2 md:w-1/2 slg:w-1/2 w-full xxl:px-0 xl:px-0 lg:px-0 md:px-0 slg:px-0 px-6 text-2Gray">
           <div class="xxl:w-[60%] xl:w-[60%] lg:w-[60%] md:w-[60%] slg:w-[60%] w-full text-sm xxl:text-base xl:text-base lg:text-base md:text-base slg:text-base font-normal xxl:ml-14 xl:ml-14 lg:ml-14 ml-0 xxl:mt-0 xl:mt-0 lg:mt-0 mt-4 manrope-font">{{$t('carousel.text')}}</div>
         </div>  
       </div>
@@ -172,7 +172,7 @@ function openCloseLang() {
       <div class="slider-container w-full xxl:h-[553px] xl:h-[553px] lg:h-[553px] md:h-[553px] slg:h-[553px] h-[650px] relative xxl:mt-[103px] xl:mt-[103px] lg:mt-[103px] md:mt-[103px] mt-[34px]">
         <div class="slider w-full xxl:h-[553px] xl:h-[553px] lg:h-[553px] md:h-[553px] slg:h-[553px] h-[650px] xxl:flex xl:flex lg:flex md:flex slg:flex" :style="{ transform: `translateX(-${currentItem * 100}%)` }">
           <div v-for="(item, index) in cData" :key="index" class="slider-item h-full w-full relative">
-            <div class="w-full xxl:flex-row xl:flex-row lg:flex-row md:flex-row slg:flex-row flex flex-col-reverse box-border h-full xxl:px-0 xl:px-0 lg:px-0 md:px-0 px-6">
+            <div class="w-full xxl:flex-row xl:flex-row lg:flex-row md:flex-row slg:flex-row flex flex-col-reverse box-border h-full xxl:px-0 xl:px-0 lg:px-0 md:px-0 slg:px-0 px-6">
               <div class="xxl:w-[50%] xl:w-[50%] lg:w-[50%] md:w-[50%] slg:w-[50%] w-full flex justify-start xxl:mt-[114px] xl:mt-[114px] lg:mt-[114px] md:mt-[114px] mt-[32px]">
                 <div class="xxl:w-4/5 xl:w-4/5 lg:w-4/5 md:w-4/5 slg:w-4/5 w-full">
                   <h2 class="text-mWhite xxl:text-[24px] xl:text-[24px] lg:text-[24px] md:text-[24px] slg:text-[24px] text-[20px] manrope-font xxl:font-semibold xl:font-semibold lg:font-semibold md:font-semibold slg:font-semibold font-bold">{{ item.title }}</h2>
@@ -235,33 +235,33 @@ function openCloseLang() {
           </div>
         </div>
       </div>
-      <div class="w-full xxl:grid xl:grid lg:grid md:grid slg:grid flex flex-col grid-cols-3 gap-6 xxl:mt-[88px] xl:mt-[88px] lg:mt-[88px] md:mt-[88px] mt-12 xxl:px-0 xl:px-0 lg:px-0 md:px-0 px-6">
-        <div class="border border-2Gray h-[300px] rounded-2xl xxl:px-12 xl:px-12 lg:px-12 md:px-12 slg:px-12 p-8 xxl:py-10 xl:py-10 lg:py-10 md:py-10 slg:py-10 flex flex-col justify-between">
+      <div class="w-full xxl:grid xl:grid lg:grid md:grid slg:grid flex flex-col grid-cols-3 gap-6 xxl:mt-[88px] xl:mt-[88px] lg:mt-[88px] md:mt-[88px] mt-12 xxl:px-0 xl:px-0 lg:px-0 md:px-0 slg:px-0 px-6">
+        <div class="group hover:border-mRed border border-2Gray h-[300px] rounded-2xl xxl:px-12 xl:px-12 lg:px-12 md:px-12 slg:px-12 p-8 xxl:py-10 xl:py-10 lg:py-10 md:py-10 slg:py-10 flex flex-col justify-between">
           <div>
-            <handGlobe/>            
+            <handGlobe class="group-hover:fill-mRed fill-mWhite"/>            
           </div>
           <div class="text-mWhite font-semibold xxl:text-[24px] xl:text-[24px] lg:text-[24px] md:text-[24px] slg:text-[24px] text-[20px] mt-8 manrope-font w-full">{{$t('underCarousel.card.title1')}}</div>
           <div class="text-mWhite font-normal xxl:text-[16px] xl:text-[16px] lg:text-[16px] md:text-[16px] slg:text-[16px] text-[14px] mt-4 xxl:w-3/4 xl:w-3/4 lg:w3/ md:w-3/4 slg:w-3/4 w-full manrope-font">{{$t('underCarousel.card.text1')}}</div>
         </div>
-        <div class="border border-2Gray h-[300px] rounded-2xl xxl:px-12 xl:px-12 lg:px-12 md:px-12 slg:px-12 p-8 xxl:py-10 xl:py-10 lg:py-10 md:py-10 slg:py-10 flex flex-col justify-between">
+        <div class="group hover:border-mRed border border-2Gray h-[300px] rounded-2xl xxl:px-12 xl:px-12 lg:px-12 md:px-12 slg:px-12 p-8 xxl:py-10 xl:py-10 lg:py-10 md:py-10 slg:py-10 flex flex-col justify-between">
           <div>
-            <handGlobe/>            
+            <handGlobe class="group-hover:fill-mRed fill-mWhite"/>            
           </div>
           <div class="text-mWhite font-semibold xxl:text-[24px] xl:text-[24px] lg:text-[24px] md:text-[24px] slg:text-[24px] text-[20px] mt-8 manrope-font w-full">{{$t('underCarousel.card.title2')}}</div>
           <div class="text-mWhite font-normal xxl:text-[16px] xl:text-[16px] lg:text-[16px] md:text-[16px] slg:text-[16px] text-[14px] mt-4 xxl:w-3/4 xl:w-3/4 lg:w3/ md:w-3/4 slg:w-3/4 w-full manrope-font">{{$t('underCarousel.card.text2')}}</div>
         </div>
         <div class="h-[300px] rounded-2xl xxl:flex xl:flex lg:flex md:flex hidden"></div>
         <div class="h-[300px] rounded-2xl xxl:flex xl:flex lg:flex md:flex hidden"></div>
-        <div class="border border-2Gray h-[300px] rounded-2xl xxl:px-12 xl:px-12 lg:px-12 md:px-12 slg:px-12 p-8 xxl:py-10 xl:py-10 lg:py-10 md:py-10 slg:py-10 flex flex-col justify-between">
+        <div class="group hover:border-mRed border border-2Gray h-[300px] rounded-2xl xxl:px-12 xl:px-12 lg:px-12 md:px-12 slg:px-12 p-8 xxl:py-10 xl:py-10 lg:py-10 md:py-10 slg:py-10 flex flex-col justify-between">
           <div>
-            <handGlobe/>            
+            <handGlobe class="group-hover:fill-mRed fill-mWhite"/>            
           </div>
           <div class="text-mWhite font-semibold xxl:text-[24px] xl:text-[24px] lg:text-[24px] md:text-[24px] slg:text-[24px] text-[20px] mt-8 manrope-font w-full">{{$t('underCarousel.card.title3')}}</div>
           <div class="text-mWhite font-normal xxl:text-[16px] xl:text-[16px] lg:text-[16px] md:text-[16px] slg:text-[16px] text-[14px] mt-4 xxl:w-3/4 xl:w-3/4 lg:w3/ md:w-3/4 slg:w-3/4 w-full manrope-font">{{$t('underCarousel.card.text3')}}</div>
         </div>
-        <div class="border border-2Gray h-[300px] rounded-2xl xxl:px-12 xl:px-12 lg:px-12 md:px-12 slg:px-12 p-8 xxl:py-10 xl:py-10 lg:py-10 md:py-10 slg:py-10 flex flex-col justify-between">
+        <div class="group hover:border-mRed border border-2Gray h-[300px] rounded-2xl xxl:px-12 xl:px-12 lg:px-12 md:px-12 slg:px-12 p-8 xxl:py-10 xl:py-10 lg:py-10 md:py-10 slg:py-10 flex flex-col justify-between">
           <div>
-            <handGlobe/>            
+            <handGlobe class="group-hover:fill-mRed fill-mWhite"/>            
           </div>
           <div class="text-mWhite font-semibold xxl:text-[24px] xl:text-[24px] lg:text-[24px] md:text-[24px] slg:text-[24px] text-[20px] mt-8 manrope-font w-full">{{$t('underCarousel.card.title4')}}</div>
           <div class="text-mWhite font-normal xxl:text-[16px] xl:text-[16px] lg:text-[16px] md:text-[16px] slg:text-[16px] text-[14px] mt-4 xxl:w-3/4 xl:w-3/4 lg:w3/ md:w-3/4 slg:w-3/4 w-full manrope-font">{{$t('underCarousel.card.text4')}}</div>
@@ -270,7 +270,7 @@ function openCloseLang() {
     </div>
     <!-- Result End --> 
     <!-- Counts Start -->
-    <div id="about" class="xxl:w-[1350px] xl:w-[1350px] lg:w-[1300px] w-full xxl:h-[700px] xl:h-[700px] lg:h-[700px] md:h-[700px] slg:h-[700px] h-[1650px] mx-auto xxl:mt-[184px] xl:mt-[184px] lg:mt-[184px] md:mt-[184px] mt-[120px] flex xxl:flex-row xl:flex-row lg:flex-row md:flex-row slg:flex-row flex-col justify-between xxl:px-0 xl:px-0 lg:px-0 px-6">
+    <div id="about" class="xxl:w-[1350px] xl:w-[1350px] lg:w-[1300px] w-full xxl:h-[700px] xl:h-[700px] lg:h-[700px] md:h-[700px] slg:h-[700px] h-[1650px] mx-auto xxl:mt-[184px] xl:mt-[184px] lg:mt-[184px] md:mt-[184px] mt-[120px] flex xxl:flex-row xl:flex-row lg:flex-row md:flex-row slg:flex-row flex-col justify-between xxl:px-0 xl:px-0 lg:px-0 md:px-0 slg:px-0 px-6">
       <div class="xxl:w-1/2 xl:w-1/2 lg:w-1/2 md:w-1/2 slg:w-1/2 w-full flex flex-col justify-between">
         <div class="text-mWhite flex flex-col tracking-wider font-semibold xxl:text-[40px] xl:text-[40px] lg:text-[40px] text-[24px] w-full xxl:pr-8 xl:pr-8 md:pr-8 lg:pr-8 p-0 rf-dewi-font">
           <div>
@@ -306,8 +306,8 @@ function openCloseLang() {
     </div>
     <!-- Counts End -->
     <!-- Contact Start -->
-    <div id="contacts" class="xxl:w-[1350px] xl:w-[1350px] lg:w-[1300px] w-full xxl:mt-[184px] xl:mt-[184px] lg:mt-[184px] md:mt-[184px] mt-[120px] xxl:px-0 xl:px-0 lg:px-0 px-6 h-auto mx-auto flex flex-col">
-      <div class="w-full xxl:mt-14 xl:mt-14 lg:mt-14 mt-24">
+    <div id="contacts" class="xxl:w-[1350px] xl:w-[1350px] lg:w-[1300px] w-full xxl:mt-[184px] xl:mt-[184px] lg:mt-[184px] md:mt-[184px] mt-[120px] xxl:px-0 xl:px-0 lg:px-0 md:px-0 slg:px-0 px-6 h-auto mx-auto flex flex-col">
+      <div class="w-full">
         <div class="text-mWhite xxl:text-[40px] xl:text-[40px] lg:text-[40px] text-[24px] font-medium flex flex-col tracking-wider rf-dewi-font">
           <span>{{$t('contact.title')}}</span> 
           <span>{{$t('contact.title_1')}}</span> 
@@ -351,10 +351,10 @@ function openCloseLang() {
         </div>
       </div>
     </div>
-    <!-- Contact Start -->
+    <!-- Contact End -->
     <div class="xxl:w-[1350px] xl:w-[1350px] lg:w-[1300px] w-full mx-auto mt-14">
       <!-- Navbar Start -->
-      <div class="w-full py-8 flex xxl:flex-row xl:flex-row lg:flex-row md:flex-row slg:flex-row flex-col justify-between items-center">
+      <div class="w-full py-8 flex xxl:flex-row xl:flex-row lg:flex-row md:flex-row slg:flex-row flex-col justify-between items-center relative">
         <div class="w-[30%] text-[36px] flex items-center">
           <logo class="xxl:scale-100 xl:scale-100 lg:scale-100 md:scale-100 slg:scale-100 scale-125"/>           
         </div>
@@ -367,6 +367,12 @@ function openCloseLang() {
             <li class="hover:text-mRed underline-hover cursor-pointer xxl:mt-0 xl:mt-0 lg:mt-0 md:mt-0 slg:mt-0 mt-4"><a class="text-mGray hover:text-mRed text-base manrope-font" href="#contacts">{{$t('menu.contacts')}}</a></li>
           </ul>
         </div>
+        <a href="#main" class="absolute cursor-pointer border border-mWhite w-14 h-14 xxl:flex xl:flex lg:flex md:flex slg:flex hidden -right-[144px] bottom-8 rounded-full justify-center items-center">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 19V5" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M5 12L12 5L19 12" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>            
+        </a>
       </div>
       <!-- Navbar End -->
     </div>

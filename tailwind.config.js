@@ -32,6 +32,9 @@ module.exports = {
       '2Black': '#101922',
       '3Black':'#252F38'
     },
+    variants: {
+      fill: ['hover', 'focus'], // this line does the trick
+    },
     extend: {
       fontFamily: {
         manrope: ['Manrope', 'sans-serif'],
