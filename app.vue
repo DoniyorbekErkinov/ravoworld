@@ -40,20 +40,11 @@ const count1 = ref(0)
 const count2 = ref(0)
 const count3 = ref(0)
 const count4 = ref(0)
-function changeCurrentItem(side) {
-  if (side == 'left') {
-    if (currentItem.value == 1) {
-      currentItem.value = 5
-    } else {
-      currentItem.value = currentItem.value - 1
-    }
-  } else {
-    if (currentItem.value == 5) {
-      currentItem.value = 1
-    } else {
-      currentItem.value = currentItem.value + 1
-    }
-  }
+function next() {
+  currentItem.value = (currentItem.value + 1) % cData.value.length;
+}
+function prev() {
+  currentItem.value = (currentItem.value - 1 + cData.value.length) % cData.value.length;
 }
 watch(locale, (newVal, oldVal) => {
   localStorage.setItem('locale', newVal)
@@ -61,7 +52,7 @@ watch(locale, (newVal, oldVal) => {
 onMounted(() => {
   let carouselInterval = setInterval(() => {
     if (window.pageYOffset > 200 && window.pageYOffset < 2500) {        
-      changeCurrentItem('right')
+      next()
     } else {
       clearInterval(carouselInterval)      
     }
@@ -177,74 +168,39 @@ function openCloseLang() {
         </div>  
       </div>
       <!-- Header End -->
-      <!-- Body Start -->
-      <div v-for="(item, i) in cData" :class="currentItem == (i+1) ? 'flex justify-between transition duration-[4000ms] ease-in-out' : 'hidden transition duration-[4000ms] ease-in-out'" :key="i" class="w-full xxl:h-[570] xl:h-[570] lg:h-[570] md:h-[570] slg:h-[570] h-[650px] mt-20 relative">
-        <div class="w-[80%] xxl:flex xl:flex lg:flex md:flex slg:flex h-full hidden justify-between">
-          <div class="w-1/2 h-full flex flex-col py-14 mt-14">
-            <div class="text-mWhite w-4/5 text-2xl font-medium transition duration-[4000ms] ease-in-out manrope-font">
-              {{ item.title }}
-            </div>
-            <div class="w-9/12 mt-8 text-mGray transition duration-[4000ms] ease-in-out manrope-font">
-              {{ item.text }}
-            </div>
-            <div class="w-full flex items-center mt-20">
-              <div  @click="changeCurrentItem('left')" class="w-14 h-14 rounded-full flex justify-center items-center group border border-mRed hover:bg-mRed rotate-180 opacity-60 hover:opacity-100">
-                <svg class="stroke-mRed group-hover:stroke-mWhite" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9 18L15 12L9 6" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+      <!-- Body Start -->      
+      <div class="slider-container w-full xxl:h-[553px] xl:h-[553px] lg:h-[553px] md:h-[553px] slg:h-[553px] h-[650px] relative mt-[103px]">
+        <div class="slider w-full xxl:h-[553px] xl:h-[553px] lg:h-[553px] md:h-[553px] slg:h-[553px] h-[650px] xxl:flex xl:flex lg:flex md:flex slg:flex" :style="{ transform: `translateX(-${currentItem * 100}%)` }">
+          <div v-for="(item, index) in cData" :key="index" class="slider-item h-full w-[80%] relative">
+            <div class="w-[80%] flex box-border h-full">
+              <div class="w-[50%] flex justify-start">
+                <div class="mt-[114px] w-4/5">
+                  <h2 class="text-mWhite xxl:text-[24px] xl:text-[24px] lg:text-[24px] md:text-[24px] slg:text-[24px] text-[20px] manrope-font xxl:font-semibold xl:font-semibold lg:font-semibold md:font-semibold slg:font-semibold font-bold">{{ item.title }}</h2>
+                  <p class="text-mGray xxl:text-[16px] xl:text-[16px] lg:text-[16px] md:text-[16px] slg:text-[16px] text-[14px] manrope-font font-normal xxl:mt-8 xl:mt-8 lg:mt-8 md:mt-8 slg:mt-8 mt-4">{{ item.text }}</p>
+                </div>             
               </div>
-              <div class="text-mWhite ml-4">
-                <span class="text-2xl manrope-font">{{ i + 1 }}</span> / {{ cData.length }}
-              </div>
-              <div @click="changeCurrentItem('right')"  class=" w-14 h-14 rounded-full flex justify-center items-center group border border-mRed hover:bg-mRed ml-4">
-                <svg class="stroke-mRed group-hover:stroke-mWhite" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9 18L15 12L9 6"  stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div class="w-1/2 h-full">
-            <img class="rounded-3xl transition duration-[4000ms] ease-in-out" :src="item.img"/>
-          </div>
-        </div>
-        <div class="absolute -right-[40%] top-[55%] w-1/2 xxl:flex xl:flex lg:flex md:flex slg:flex flex-col hidden">
-          <div class="text-mGray opacity-25 w-4/5 text-2xl font-medium transition duration-[4000ms] ease-in-out manrope-font">
-            {{ cData[i == 4 ? 0 : i +1 ].title }}
-          </div>
-          <div class="w-9/12 mt-8 text-mGray opacity-15 transition duration-[4000ms] ease-in-out manrope-font">
-            {{ cData[i == 4 ? 0 : i +1 ].text }}
-          </div>
-        </div>
-        <div class="w-full xxl:hidden xl:hidden lg:hidden md:hidden slg:hidden h-full flex justify-between my-8">
-          <div class="w-full h-full flex flex-col items-center px-6 border-none">
-            <div class="w-full h-full border-none bg-transparent">
-              <img class="rounded-3xl transition duration-[4000ms] ease-in-out border-none bg-transparent" :src="item.img"/>
-            </div>
-            <div class="text-mWhite w-full mt-8 text-2xl font-medium transition duration-[4000ms] ease-in-out manrope-font">
-              {{ item.title }}
-            </div>
-            <div class="w-full mt-8 text-mGray transition duration-[4000ms] ease-in-out manrope-font">
-              {{ item.text }}
-            </div>
-            <div class="w-full flex justify-center items-center mt-12">
-              <div  @click="changeCurrentItem('left')" class="w-14 h-14 rounded-full flex justify-center items-center group border border-mRed hover:bg-mRed rotate-180 opacity-60 hover:opacity-100">
-                <svg class="stroke-mRed group-hover:stroke-mWhite" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9 18L15 12L9 6" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-
-              </div>
-              <div class="text-mWhite ml-4">
-                <span class="text-2xl manrope-font">{{ i + 1 }}</span> / {{ cData.length }}
-              </div>
-              <div @click="changeCurrentItem('right')"  class=" w-14 h-14 rounded-full flex justify-center items-center group border border-mRed hover:bg-mRed ml-4">
-                <svg class="stroke-mRed group-hover:stroke-mWhite" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9 18L15 12L9 6"  stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+              <div class="image-container h-full w-[50%]">
+                <img :src="item.img" alt="item.image" class="slider-image h-full w-full" />
               </div>
             </div>
           </div>
         </div>
-        <div class="w-[15%] xxl:flex xl:flex lg:flex md:flex slg:flex h-full hidden"></div>
+        <div class="slider-controls left-0 bottom-[84px] absolute flex justify-between items-center">
+          <div @click="prev" class="w-14 h-14 rounded-full flex justify-center items-center group border border-mRed hover:bg-mRed rotate-180 opacity-60 hover:opacity-100">
+            <svg class="stroke-mRed group-hover:stroke-mWhite" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 18L15 12L9 6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="ml-4">
+            <span class="text-mWhite xxl:text-[24px] xl:text-[24px] lg:text-[24px] md:text-[24px] slg:text-[24px] text-[16px] manrope-font">{{ currentItem + 1 }} /</span>
+            <span class="text-mGray xxl:text-[16px] xl:text-[16px] lg:text-[16px] md:text-[16px] slg:text-[16px] text-[14px] manrope-font">{{ cData.length }}</span>
+          </div>
+          <div @click="next" class=" w-14 h-14 rounded-full flex justify-center items-center group border border-mRed hover:bg-mRed ml-4">
+            <svg class="stroke-mRed group-hover:stroke-mWhite" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 18L15 12L9 6"  stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
       </div>
       <!-- Body End -->
     </div>
@@ -405,6 +361,7 @@ function openCloseLang() {
         <span class="text-mWhite opacity-20">designed by</span> <span class="text-mWhite opacity-40">Nextmark</span>
       </span>
     </div>
+    <!-- Sidebar Start -->
     <div v-if="isSideBarOpen" class="bg-2Black absolute left-0 top-0 w-screen h-screen flex flex-col p-8">
       <div class="w-full flex justify-end">
         <cross @click="openCloseSidebar"/>
@@ -425,6 +382,7 @@ function openCloseLang() {
         <span class="text-xl manrope-font text-mGray opacity-30">designed by</span> <span class="text-xl manrope-font text-mGray ml-2">Nextmark</span>
       </div>
     </div>
+    <!-- Sidebar Start -->
   </div>
 </template>
 <style>
@@ -490,36 +448,48 @@ body {
   background: #101922;
 }
 
-select {
-  color: #ababab;
-  margin-left: 10px;
-  padding: 10px 0px;
-  font-size: 20px;
-  border: none;
-  background: transparent;
-  transition: border 0.3s;
+
+.slider-container {
+  position: relative;
+  overflow: hidden;
 }
 
-select:focus {
-  border: none;
-  outline: none;
+.slider {
+  display: flex;
+  transition: transform 2s ease-in-out;
 }
 
-/* Customize the appearance of the options within the dropdown */
-select option {
-  background-color: #0B1117;
-  color: #ababab;
-  border: 0px solid;
-  margin-top: 6px;
+.slider-item {
+  flex: 0 0 100%;
+  box-sizing: border-box;
+  display: flex;
 }
 
-/* Adjust the hover effect for better visibility */
-select option:hover {
-  background-color: #1a1f27;
-  color: #D11011;
+
+.image-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
 }
-select option:focus {
-  border: none;
-  outline: none;
+
+.slider-image {
+  width: 100%;
+  border-radius: 24px;
 }
+
+.slider-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.slider-arrow {
+  cursor: pointer;
+  font-size: 2rem;
+  color: #ff0000; /* Red color */
+  padding: 10px;
+  border-radius: 50%;
+}
+
 </style>
