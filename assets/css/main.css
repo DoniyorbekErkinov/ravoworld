@@ -5,6 +5,56 @@
 @tailwind utilities;
 
 
+@font-face {
+  font-family: 'RF Dewi Light';
+  src: url('@/static/fonts/RFDewiExpanded-Light.ttf') format('truetype'),
+    url('~static/fonts/RFDewiExpanded-Black.woff2') format('woff2'),
+       url('~static/fonts/RFDewiExpanded-Black.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'RF Dewi Regular';
+  src: url('@/static/fonts/RFDewiExpanded-Regular.ttf') format('truetype'),
+    url('~static/fonts/RFDewiExpanded-Black.woff2') format('woff2'),
+       url('~static/fonts/RFDewiExpanded-Black.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'RF Dewi Semibold';
+  src: url('@/static/fonts/RFDewiExpanded-Semibold.ttf') format('truetype'),
+       url('~static/fonts/RFDewiExpanded-Black.woff2') format('woff2'),
+       url('~static/fonts/RFDewiExpanded-Black.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+} 
+@font-face {
+  font-family: 'RF Dewi Bold';
+  src: url('@/static/fonts/RFDewiExtended-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+} 
+
+.font-normal {
+    font-family: 'RF Dewi Light', sans-serif;
+    font-weight: 400; /* Regular */
+  }
+  
+  .font-medium {
+    font-family: 'RF Dewi Regular', sans-serif;
+    font-weight: 500; /* Medium */
+  }
+  
+  .font-semibold {
+    font-family: 'RF Dewi Semibold', sans-serif;
+    font-weight: 600; /* Semibold */
+  }
+  .font-bold {
+    font-family: 'RF Dewi Bold', sans-serif;
+    font-weight: 700; /* Semibold */
+  }
+
 html {
   scroll-behavior: smooth;
 }

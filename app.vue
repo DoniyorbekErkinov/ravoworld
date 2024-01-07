@@ -1,6 +1,5 @@
 <script setup>
 import { ref, onMounted, watch } from 'vue'
-const { locale, t } = useI18n()
 import handGlobe from './components/handGlobe.vue';
 import logo from './components/logo.vue';
 import burger from './components/burger.vue';
@@ -8,6 +7,7 @@ import cross from './components/cross.vue';
 import phone from './components/phone.vue';
 import arrow from './components/arrow.vue';
 
+const { locale, t } = useI18n()
 const currentItem = ref(1)
 const cData = ref([
   {
@@ -226,12 +226,12 @@ function openCloseLang() {
       <div class="xxl:w-[70%] xl:w-[70%] lg:w-[70%] md:w-[70%] slg:w-[70%] w-full mx-auto flex flex-col items-center  font-bold ">
         <div class="flex justify-end items-center w-full">
           <div class="xxl:w-[75%] xl:w-[75%] lg:w-[75%] md:w-[75%] slg:w-[75%] w-full flex xxl:justify-end xl:justify-end lg:justify-end md:justify-end slg:justify-end justify-center mx-auto">
-            <span class="text-mWhite xxl:text-[40px] xl:text-[40px] lg:text-[40px] md:text-[40px] slg:text-[40px] text-[24px] tracking-wider rf-dewi-font">{{$t('underCarousel.title_1_1')}} </span> <span class="text-mRed xxl:text-[40px] xl:text-[40px] lg:text-[40px] md:text-[40px] slg:text-[40px] text-[24px] tracking-wider ml-4 rf-dewi-font"> {{$t('underCarousel.title_1_2')}}</span>
+            <span class="text-mWhite xxl:text-[40px] xl:text-[40px] lg:text-[40px] md:text-[40px] slg:text-[40px] text-[24px] tracking-wider font-bold ">{{$t('underCarousel.title_1_1')}} </span> <span class="text-mRed xxl:text-[40px] xl:text-[40px] lg:text-[40px] md:text-[40px] slg:text-[40px] text-[24px] tracking-wider ml-4 font-bold"> {{$t('underCarousel.title_1_2')}}</span>
           </div>
         </div>
         <div class="flex justify-start items-center w-full">
           <div class="xxl:w-[75%] xl:w-[75%] lg:w-[75%] md:w-[75%] slg:w-[75%] w-full flex xxl:justify-start xl:justify-start lg:justify-start md:justify-start slg:justify-start justify-center mx-auto">
-            <span class="text-mWhite xxl:text-[40px] xl:text-[40px] lg:text-[40px] md:text-[40px] slg:text-[40px] text-[24px] tracking-wider rf-dewi-font">{{$t('underCarousel.title_2_1')}} </span> <span class="text-mRed xxl:text-[40px] xl:text-[40px] lg:text-[40px] md:text-[40px] slg:text-[40px] text-[24px] tracking-wider ml-4 rf-dewi-font"> {{$t('underCarousel.title_2_2')}}</span>
+            <span class="text-mWhite xxl:text-[40px] xl:text-[40px] lg:text-[40px] md:text-[40px] slg:text-[40px] text-[24px] tracking-wider font-bold">{{$t('underCarousel.title_2_1')}} </span> <span class="text-mRed xxl:text-[40px] xl:text-[40px] lg:text-[40px] md:text-[40px] slg:text-[40px] text-[24px] tracking-wider ml-4 font-bold"> {{$t('underCarousel.title_2_2')}}</span>
           </div>
         </div>
       </div>
@@ -274,10 +274,10 @@ function openCloseLang() {
       <div class="xxl:w-1/2 xl:w-1/2 lg:w-1/2 md:w-1/2 slg:w-1/2 w-full flex flex-col justify-between">
         <div class="text-mWhite flex flex-col tracking-wider font-semibold xxl:text-[40px] xl:text-[40px] lg:text-[40px] text-[24px] w-full xxl:pr-8 xl:pr-8 md:pr-8 lg:pr-8 p-0 rf-dewi-font">
           <div>
-            <span class="text-mRed">{{$t('associate.title_1_1')}}</span><span> {{$t('associate.title_1_2')}} </span>
+            <span class="text-mRed font-bold">{{$t('associate.title_1_1')}}</span><span class="font-bold text-mWhite" > {{$t('associate.title_1_2')}} </span>
           </div>
           <div>
-            <span>{{$t('associate.title_2_1')}}</span><span class="text-mRed"> {{$t('associate.title_2_2')}} </span>
+            <span class="font-bold" >{{$t('associate.title_2_1')}}</span><span class="text-mRed font-bold text-red-700 text-[40px] leading-[52px]"> {{$t('associate.title_2_2')}} </span>
           </div>
         </div>
         <div class="text-mWhite xxl:w-4/5 xl:w-4/5 lg:w-4/5 md:w-4/5 slg:w-4/5 w-full xxl:pr-8 xl:pr-8 md:pr-8 lg:pr-8 py-8 manrope-font">
@@ -409,13 +409,11 @@ function openCloseLang() {
 </template>
 <style>
 /* Import the RF Dewi font family */
-@font-face {
-  font-family: 'RF Dewi';
-  src: url('~static/fonts/RFDewiExpanded-Black.woff2') format('woff2'),
-       url('~static/fonts/RFDewiExpanded-Black.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
+
+
+
+
+
 
 /* Import the Manrope font family */
 @font-face {
