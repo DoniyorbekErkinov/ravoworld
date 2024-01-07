@@ -5,7 +5,9 @@
 @tailwind utilities;
 
 
-
+html {
+  scroll-behavior: smooth;
+}
 
 .scrollbarActive::-webkit-scrollbar {
     @apply ease-in duration-300;
