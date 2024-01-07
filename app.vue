@@ -113,8 +113,8 @@ function openCloseLang() {
             <li class="hover:text-mRed underline-hover cursor-pointer"><a class="text-mGray hover:text-mRed font-normal text-base rf-dewi-font" href="#about">{{$t('menu.about')}}</a></li>
             <li class="hover:text-mRed underline-hover cursor-pointer"><a class="text-mGray hover:text-mRed font-normal text-base rf-dewi-font" href="#contacts">{{$t('menu.contacts')}}</a></li>
           </ul>
-          <div class="flex justify-end items-center w-[40%]">            
-            <div class="text-xl font-light font-mono mr-4 flex items-center relative" @click="openCloseLang">
+          <div class="flex justify-start items-center w-[40%]">            
+            <div class="text-xl font-light font-mono ml-[72px] flex items-center relative" @click="openCloseLang">
               <span :class="isLangOpen ? 'text-mRed' : 'text-mGray'" class="capitalize font-light text-base rf-dewi-font">{{$t(`lang.${locale}`)}}</span>
               <arrow :class="isLangOpen ? '-rotate-90 stroke-mRed' : 'rotate-90 stroke-mGray'" class="w-5 h-5 ml-1"/>
               <div v-if="isLangOpen" class="absolute text-mWhite top-8">
@@ -123,7 +123,7 @@ function openCloseLang() {
                 <div @click="locale = 'uz'" class="border-none text-mGray hover:text-mRed mt-1 font-normal text-base cursor-pointer rf-dewi-font">{{$t('lang.uz')}}</div>
               </div>
             </div>
-            <div class="xxl:flex xl:flex lg:flex hidden text-mWhite justify-between group hover:text-mRed items-center">
+            <div class="xxl:flex xl:flex lg:flex hidden text-mWhite justify-between group hover:text-mRed items-center ml-10">
               <svg class="mr-4 stroke-mWhite group-hover:stroke-mRed" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M21.9999 16.92V19.92C22.0011 20.1985 21.944 20.4741 21.8324 20.7293C21.7209 20.9845 21.5572 21.2136 21.352 21.4018C21.1468 21.5901 20.9045 21.7335 20.6407 21.8227C20.3769 21.9119 20.0973 21.945 19.8199 21.92C16.7428 21.5856 13.7869 20.5341 11.1899 18.85C8.77376 17.3146 6.72527 15.2661 5.18993 12.85C3.49991 10.2412 2.44818 7.27097 2.11993 4.17997C2.09494 3.90344 2.12781 3.62474 2.21643 3.3616C2.30506 3.09846 2.4475 2.85666 2.6347 2.6516C2.82189 2.44653 3.04974 2.28268 3.30372 2.1705C3.55771 2.05831 3.83227 2.00024 4.10993 1.99997H7.10993C7.59524 1.9952 8.06572 2.16705 8.43369 2.48351C8.80166 2.79996 9.04201 3.23942 9.10993 3.71997C9.23656 4.68004 9.47138 5.6227 9.80993 6.52997C9.94448 6.8879 9.9736 7.27689 9.89384 7.65086C9.81408 8.02482 9.6288 8.36809 9.35993 8.63998L8.08993 9.90997C9.51349 12.4135 11.5864 14.4864 14.0899 15.91L15.3599 14.64C15.6318 14.3711 15.9751 14.1858 16.3491 14.1061C16.723 14.0263 17.112 14.0554 17.4699 14.19C18.3772 14.5285 19.3199 14.7634 20.2799 14.89C20.7657 14.9585 21.2093 15.2032 21.5265 15.5775C21.8436 15.9518 22.0121 16.4296 21.9999 16.92Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>               
@@ -241,14 +241,14 @@ function openCloseLang() {
             <handGlobe class="group-hover:fill-mRed fill-mWhite"/>            
           </div>
           <div class="text-mWhite font-semibold xxl:text-[24px] xl:text-[24px] lg:text-[24px] md:text-[24px] slg:text-[24px] text-[20px] mt-8 manrope-font w-full">{{$t('underCarousel.card.title1')}}</div>
-          <div class="text-mWhite font-normal xxl:text-[16px] xl:text-[16px] lg:text-[16px] md:text-[16px] slg:text-[16px] text-[14px] mt-4 xxl:w-3/4 xl:w-3/4 lg:w3/ md:w-3/4 slg:w-3/4 w-full manrope-font">{{$t('underCarousel.card.text1')}}</div>
+          <div class="text-mGray font-normal xxl:text-[16px] xl:text-[16px] lg:text-[16px] md:text-[16px] slg:text-[16px] text-[14px] mt-4  w-full manrope-font">{{$t('underCarousel.card.text1')}}</div>
         </div>
         <div class="group hover:border-mRed border border-2Gray h-[300px] rounded-2xl xxl:px-12 xl:px-12 lg:px-12 md:px-12 slg:px-12 p-8 xxl:py-10 xl:py-10 lg:py-10 md:py-10 slg:py-10 flex flex-col justify-between">
           <div>
             <handGlobe class="group-hover:fill-mRed fill-mWhite"/>            
           </div>
           <div class="text-mWhite font-semibold xxl:text-[24px] xl:text-[24px] lg:text-[24px] md:text-[24px] slg:text-[24px] text-[20px] mt-8 manrope-font w-full">{{$t('underCarousel.card.title2')}}</div>
-          <div class="text-mWhite font-normal xxl:text-[16px] xl:text-[16px] lg:text-[16px] md:text-[16px] slg:text-[16px] text-[14px] mt-4 xxl:w-3/4 xl:w-3/4 lg:w3/ md:w-3/4 slg:w-3/4 w-full manrope-font">{{$t('underCarousel.card.text2')}}</div>
+          <div class="text-mGray font-normal xxl:text-[16px] xl:text-[16px] lg:text-[16px] md:text-[16px] slg:text-[16px] text-[14px] mt-4  w-full manrope-font">{{$t('underCarousel.card.text2')}}</div>
         </div>
         <div class="h-[300px] rounded-2xl xxl:flex xl:flex lg:flex md:flex hidden"></div>
         <div class="h-[300px] rounded-2xl xxl:flex xl:flex lg:flex md:flex hidden"></div>
@@ -257,14 +257,14 @@ function openCloseLang() {
             <handGlobe class="group-hover:fill-mRed fill-mWhite"/>            
           </div>
           <div class="text-mWhite font-semibold xxl:text-[24px] xl:text-[24px] lg:text-[24px] md:text-[24px] slg:text-[24px] text-[20px] mt-8 manrope-font w-full">{{$t('underCarousel.card.title3')}}</div>
-          <div class="text-mWhite font-normal xxl:text-[16px] xl:text-[16px] lg:text-[16px] md:text-[16px] slg:text-[16px] text-[14px] mt-4 xxl:w-3/4 xl:w-3/4 lg:w3/ md:w-3/4 slg:w-3/4 w-full manrope-font">{{$t('underCarousel.card.text3')}}</div>
+          <div class="text-mGray font-normal xxl:text-[16px] xl:text-[16px] lg:text-[16px] md:text-[16px] slg:text-[16px] text-[14px] mt-4  w-full manrope-font">{{$t('underCarousel.card.text3')}}</div>
         </div>
         <div class="group hover:border-mRed border border-2Gray h-[300px] rounded-2xl xxl:px-12 xl:px-12 lg:px-12 md:px-12 slg:px-12 p-8 xxl:py-10 xl:py-10 lg:py-10 md:py-10 slg:py-10 flex flex-col justify-between">
           <div>
             <handGlobe class="group-hover:fill-mRed fill-mWhite"/>            
           </div>
           <div class="text-mWhite font-semibold xxl:text-[24px] xl:text-[24px] lg:text-[24px] md:text-[24px] slg:text-[24px] text-[20px] mt-8 manrope-font w-full">{{$t('underCarousel.card.title4')}}</div>
-          <div class="text-mWhite font-normal xxl:text-[16px] xl:text-[16px] lg:text-[16px] md:text-[16px] slg:text-[16px] text-[14px] mt-4 xxl:w-3/4 xl:w-3/4 lg:w3/ md:w-3/4 slg:w-3/4 w-full manrope-font">{{$t('underCarousel.card.text4')}}</div>
+          <div class="text-mGray font-normal xxl:text-[16px] xl:text-[16px] lg:text-[16px] md:text-[16px] slg:text-[16px] text-[14px] mt-4  w-full manrope-font">{{$t('underCarousel.card.text4')}}</div>
         </div>
       </div>
     </div>
