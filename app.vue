@@ -114,7 +114,7 @@ function openCloseLang() {
 }
 </script>
 <template>
-  <div class="h-full flex flex-col scrollbarActive overflow-y-hidden relative">
+  <div class="h-full flex flex-col scrollbarActive overflow-hidden relative">
     <div id="main" class="xxl:w-[1350px] xl:w-[1350px] lg:w-[1300px] mx-auto">
       <!-- Navbar Start -->
       <div
@@ -668,7 +668,7 @@ function openCloseLang() {
       id="contacts"
       class="xxl:w-[1350px] xl:w-[1350px] lg:w-[1300px] w-full xxl:mt-[184px] xl:mt-[184px] lg:mt-[184px] md:mt-[184px] mt-[120px] xxl:px-0 xl:px-0 lg:px-0 md:px-0 slg:px-0 px-6 h-auto mx-auto flex flex-col relative"
     >
-      <BrandCarousel />
+      <BrandCarousel class="xxl:mb-[184px] xl:mb-[184px] lg:mb-[184px] md:mb-[184px] mb-[120px] xxl:mt-[0px] xl:mt-[0px] lg:mt-[0px] md:mt-[0px] mt-[120px]"/>
       <div class="w-full">
         <div
           class="text-mWhite xxl:text-[40px] xl:text-[40px] lg:text-[40px] text-[24px] font-medium flex flex-col tracking-wider rf-dewi-font"
@@ -678,7 +678,7 @@ function openCloseLang() {
         </div>
       </div>
       <div
-        class="w-full xxl:h-[500px] xl:h-[500px] lg:h-[500px] md:h-[500px] slg:h-[500px] h-[1050px] xxl:grid xl:grid lg:grid md:grid slg:grid flex flex-col grid-cols-3 gap-6 mt-14 py-8"
+        class="w-full xxl:h-[500px] xl:h-[500px] lg:h-[500px] md:h-[500px] slg:h-[500px] h-[1050px] xxl:grid xl:grid lg:grid md:grid slg:grid flex-col grid-cols-3 gap-6 mt-14 py-8"
       >
         <div
           class="border border-2Gray col-span-1 py-[72px] xxl:px-[64px] xl:px-[64px] lg:px-[64px] md:px-[64px] slg:px-[64px] px-[40px] bg-3Black rounded-xl"

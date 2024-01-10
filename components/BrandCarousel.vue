@@ -51,7 +51,6 @@
 import { ref } from "vue";
 const activeHover = ref(null);
 function activeHoverFn(index, type) {
-  console.log(type);
   if (type == "over") {
     activeHover.value = index;
   }
