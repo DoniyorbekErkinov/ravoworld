@@ -1,41 +1,64 @@
 <template>
-  <div class="xxl:w-[1350px] xl:w-[1350px] lg:w-[1300px] w-full brand-carousel relative">
+  <div
+    class="xxl:w-[1350px] xl:w-[1350px] lg:w-[1300px] w-full brand-carousel relative"
+  >
     <div class="brands1">
-      <div class="brand" v-for="brand in brands" :key="brand">
-       <div class="brand-overlay"></div>
-        <img class="brand-image" :src="brand" />
+      <div class="brand" v-for="(brand, index) in 9" :key="brand">
+        <img
+          @mouseover="activeHoverFn(index, 'over')"
+          @mouseleave="activeHoverFn(index, 'leave')"
+          class="brand-image"
+          :src="
+            activeHover == index
+              ? `/img/brand_${index + 1}.svg`
+              : `/img/brand_${index + 1}_hover.svg`
+          "
+        />
       </div>
     </div>
     <div class="brands2">
-      <div class="brand" v-for="brand in brands" :key="brand">
-       <div class="brand-overlay"></div>
-        <img class="brand-image" :src="brand" />
+      <div class="brand" v-for="(brand, index) in 9" :key="brand">
+        <img
+          @mouseover="activeHoverFn(index, 'over')"
+          @mouseleave="activeHoverFn(index, 'leave')"
+          class="brand-image"
+          :src="
+            activeHover == index
+              ? `/img/brand_${index + 1}.svg`
+              : `/img/brand_${index + 1}_hover.svg`
+          "
+        />
       </div>
     </div>
     <div class="brands3">
-      <div class="brand" v-for="brand in brands" :key="brand">
-       <div class="brand-overlay"></div>
-        <img class="brand-image" :src="brand" />
+      <div class="brand" v-for="(brand, index) in 9" :key="brand">
+        <img
+          @mouseover="activeHoverFn(index, 'over')"
+          @mouseleave="activeHoverFn(index, 'leave')"
+          class="brand-image"
+          :src="
+            activeHover == index
+              ? `/img/brand_${index + 1}.svg`
+              : `/img/brand_${index + 1}_hover.svg`
+          "
+        />
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue';
-
-const brands = ref([
-  '/img/brand_1.jpg',
-  '/img/brand_2.jpg',
-  '/img/brand_3.jpg',
-  '/img/brand_4.jpg',
-  '/img/brand_5.jpg',
-  '/img/brand_6.jpg',
-  '/img/brand_7.jpg',
-  '/img/brand_8.jpg',
-  '/img/brand_9.jpg',
-  '/img/brand_10.jpg',
-]);
+import { ref } from "vue";
+const activeHover = ref(null);
+function activeHoverFn(index, type) {
+  console.log(type);
+  if (type == "over") {
+    activeHover.value = index;
+  }
+  if (type == "leave") {
+    activeHover.value = null;
+  }
+}
 </script>
 
 <style scoped>
@@ -89,7 +112,7 @@ const brands = ref([
   width: 100%;
   height: 100%;
   object-fit: contain;
-  z-index: 2;  /* Adjust object-fit property as needed */
+  z-index: 2; /* Adjust object-fit property as needed */
   background-color: #0b1117; /* Set the desired background color */
 }
 
