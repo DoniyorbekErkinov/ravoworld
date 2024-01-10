@@ -119,7 +119,7 @@ function openCloseLang() {
 // MAPS
     const coordinates = [55, 33];
     const controls = ['fullscreenControl'];
-    const detailedControls = { zoomControl: { position: { right: 10, top: 50 } } };
+    // const detailedControls = { zoomControl: { position: { right: 10, top: 50 } } };
     const showMap = ref(false)
 </script>
 <template>
@@ -796,10 +796,10 @@ function openCloseLang() {
         id="map"
           class="xxl:h-full xl:h-full lg:h-full md:h-full slg:h-full h-[509px] col-span-2"
         >
+          <!-- :detailed-controls="detailedControls" -->
         <YandexMap
           v-if="showMap"
           :coordinates="coordinates"
-          :detailed-controls="detailedControls"
           :controls="controls"
           map-type="hybrid"
         />  
