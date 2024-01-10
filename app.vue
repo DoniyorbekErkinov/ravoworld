@@ -6,22 +6,23 @@ import burger from './components/burger.vue';
 import cross from './components/cross.vue';
 import phone from './components/phone.vue';
 import arrow from './components/arrow.vue';
+import BrandCarousel from './components/BrandCarousel.vue';
 
 const { locale, t } = useI18n()
 const currentItem = ref(1)
 const cData = ref([
   {
-    img: '/img/c-img-1.png',
+    img: '/img/c-img-1.jpg',
     title: t('carousel.title1'),
     text: t('carousel.text1'),    
   },
   {
-    img: '/img/c-img-2.png',
+    img: '/img/c-img-2.jpg',
     title: t('carousel.title2'),
     text: t('carousel.text2'),    
   },
   {
-    img: '/img/c-img-3.png',
+    img: '/img/c-img-3.jpg',
     title: t('carousel.title3'),
     text: t('carousel.text3'),    
   },
@@ -35,6 +36,19 @@ const cData = ref([
     title: t('carousel.title5'),
     text: t('carousel.text5'),   
   }
+])
+
+const brands = ref([
+  '/img/brand_1.jpg',
+  '/img/brand_2.jpg',
+  '/img/brand_3.jpg',
+  '/img/brand_4.jpg',
+  '/img/brand_5.jpg',
+  '/img/brand_6.jpg',
+  '/img/brand_7.jpg',
+  '/img/brand_8.jpg',
+  '/img/brand_9.jpg',
+  '/img/brand_10.jpg',
 ])
 const count1 = ref(0)
 const count2 = ref(0)
@@ -155,7 +169,7 @@ function openCloseLang() {
     </div>
     <!-- Banner Image -->
     <!-- Carausel Start -->
-    <div id="service" class="xxl:w-[1350px] xl:w-[1350px] lg:w-[1300px] w-full mx-auto mt-[134px]">
+    <div id="service" class="xxl:w-[1350px] xl:w-[1350px] lg:w-[1300px] w-full mx-auto mt-[134px]">   
       <!-- Header Start -->
       <div class="w-full flex xxl:flex-row xl:flex-row lg:flex-row md:flex-row slg:flex-row flex-col justify-between">
         <div class="flex flex-col text-[24px] xxl:text-[40px] xl:text-[40px] lg:text-[40px] md:text-[40px] slg:text-[40px] xxl:w-1/2 xl:w-1/2 lg:w-1/2 md:w-1/2 slg:w-1/2 w-full xxl:px-0 xl:px-0 lg:px-0 md:px-0 slg:px-0 px-6">
@@ -306,7 +320,8 @@ function openCloseLang() {
     </div>
     <!-- Counts End -->
     <!-- Contact Start -->
-    <div id="contacts" class="xxl:w-[1350px] xl:w-[1350px] lg:w-[1300px] w-full xxl:mt-[184px] xl:mt-[184px] lg:mt-[184px] md:mt-[184px] mt-[120px] xxl:px-0 xl:px-0 lg:px-0 md:px-0 slg:px-0 px-6 h-auto mx-auto flex flex-col">
+    <div id="contacts" class="xxl:w-[1350px] xl:w-[1350px] lg:w-[1300px] w-full xxl:mt-[184px] xl:mt-[184px] lg:mt-[184px] md:mt-[184px] mt-[120px] xxl:px-0 xl:px-0 lg:px-0 md:px-0 slg:px-0 px-6 h-auto mx-auto flex flex-col relative">
+     <BrandCarousel />
       <div class="w-full">
         <div class="text-mWhite xxl:text-[40px] xl:text-[40px] lg:text-[40px] text-[24px] font-medium flex flex-col tracking-wider rf-dewi-font">
           <span>{{$t('contact.title')}}</span> 
@@ -424,7 +439,7 @@ function openCloseLang() {
 }
 
 /* Apply RF Dewi font to elements with the rf-dewi-font class */
-.rf-dewi-font {
+.rf-dewi-font {  
   font-family: 'RF Dewi', sans-serif;
 }
 
@@ -506,4 +521,70 @@ body {
   border-radius: 50%;
 }
 
+
+
+/* Brand */
+.brand-carousel {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.brands1 {
+  display: flex;
+  position: fixed;
+  animation: sideToSide 15s infinite linear;
+}
+
+.brands2 {
+  display: flex;
+  position: fixed;
+  animation: sideToSide2 15s infinite linear;
+}
+
+.brands3 {
+  display: flex;
+  position: fixed;
+  animation: sideToSide3 15s infinite linear;
+}
+
+.brand {
+  padding: 40px;
+  min-width: 100px;
+}
+
+.brand img {
+  width: 100%;
+}
+
+@keyframes sideToSide {
+  from {
+    transform: translateX(0%);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes sideToSide2 {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes sideToSide3 {
+  from {
+    transform: translateX(200%);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
 </style>
