@@ -1,6 +1,7 @@
 1
 <script setup>
 import { ref, onMounted, watch } from "vue";
+  import { yandexMap } from 'vue-yandex-maps'
 import handGlobe from "./components/handGlobe.vue";
 import logo from "./components/logo.vue";
 import burger from "./components/burger.vue";
@@ -102,6 +103,8 @@ onMounted(() => {
       }, 100);
     }
   });
+
+  showMap.value = true
 });
 
 const isSideBarOpen = ref(false);
@@ -112,6 +115,12 @@ function openCloseSidebar() {
 function openCloseLang() {
   isLangOpen.value = !isLangOpen.value;
 }
+
+// MAPS
+    const coordinates = [55, 33];
+    const controls = ['fullscreenControl'];
+    const detailedControls = { zoomControl: { position: { right: 10, top: 50 } } };
+    const showMap = ref(false)
 </script>
 <template>
   <div class="h-full flex flex-col scrollbarActive overflow-hidden relative">
@@ -273,7 +282,7 @@ function openCloseLang() {
     >
       <img
         class="w-full max-w-full xxl:h-[700px] xl:h-[700px] lg:h-[700px] md:h-[700px] slg:h-[700px] h-[285px]"
-        src="public/img/banner.jpg"
+        src="/img/banner.jpg"
       />
     </div>
     <!-- Banner Image -->
@@ -784,9 +793,17 @@ function openCloseLang() {
           </div>
         </div>
         <div
+        id="map"
           class="xxl:h-full xl:h-full lg:h-full md:h-full slg:h-full h-[509px] col-span-2"
         >
-          <img class="h-[500px] w-full rounded-xl" src="/public/img/map.jpg" />
+        <YandexMap
+          v-if="showMap"
+          :coordinates="coordinates"
+          :detailed-controls="detailedControls"
+          :controls="controls"
+          map-type="hybrid"
+        />  
+          <!-- <img class="h-[500px] w-full rounded-xl" src="/public/img/map.jpg" /> -->
         </div>
       </div>
     </div>
