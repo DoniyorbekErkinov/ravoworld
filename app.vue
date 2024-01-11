@@ -1,7 +1,7 @@
 1
 <script setup>
 import { ref, onMounted, watch } from "vue";
-  import { yandexMap } from 'vue-yandex-maps'
+import RedMarkerIcon from './components/MapIcon.vue';
 import handGlobe from "./components/handGlobe.vue";
 import logo from "./components/logo.vue";
 import burger from "./components/burger.vue";
@@ -117,10 +117,9 @@ function openCloseLang() {
 }
 
 // MAPS
-    const coordinates = [55, 33];
-    const controls = ['fullscreenControl'];
-    // const detailedControls = { zoomControl: { position: { right: 10, top: 50 } } };
+    const zoom = ref(17)
     const showMap = ref(false)
+    const redMarkerIcon = ref({ className: 'leaflet-div-icon', html:  '<img src="/img/mapicon.svg" alt="Red Marker">' })
 </script>
 <template>
   <div class="h-full flex flex-col scrollbarActive overflow-hidden relative">
@@ -793,17 +792,27 @@ function openCloseLang() {
           </div>
         </div>
         <div
-        id="map"
-          class="xxl:h-full xl:h-full lg:h-full md:h-full slg:h-full h-[509px] col-span-2"
+          class="xxl:h-full xl:h-full lg:h-full md:h-full slg:h-full h-[509px] xxl:mt-0 xl:mt-0 lg:mt-0 md:mt-0 slg:mt-0 mt-6 col-span-2 rounded-3xl"
         >
-          <!-- :detailed-controls="detailedControls" -->
-        <YandexMap
-          v-if="showMap"
-          :coordinates="coordinates"
-          :controls="controls"
-          map-type="hybrid"
-        />  
-          <!-- <img class="h-[500px] w-full rounded-xl" src="/public/img/map.jpg" /> -->
+          <LMap
+            class="rounded-3xl"
+            v-if="showMap"
+            ref="map"
+            :zoom="zoom"
+            :center="[41.35140553722883, 69.28855526466646]"
+          >
+            <LTileLayer
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              attribution="&amp;copy; <a href=&quot;https://www.openstreetmap.org/&quot;>OpenStreetMap</a> contributors"
+              layer-type="base"
+              name="OpenStreetMap"
+            />
+
+            <!-- Add a marker -->
+            <LMarker :lat-lng="[41.35140553722883, 69.28855526466646]" :icon="{ html: RedMarkerIconComponent }">
+              <RedMarkerIcon/>
+            </LMarker>
+          </LMap>
         </div>
       </div>
     </div>
